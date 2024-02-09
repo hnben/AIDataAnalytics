@@ -1,0 +1,14 @@
+{
+  "name": "tiennguy/328/AIDataAnalytics" ,
+  "description": "My MCV AI Data Analytics APPS ",
+  "authors": [
+    {
+      "name": "Tien Nguyen",
+      "email": "tiennguyen3354@gmail.com"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+
+}
