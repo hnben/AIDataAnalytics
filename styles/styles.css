@@ -1,0 +1,31 @@
+/*nav bar styles*/
+
+.nav-item {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    left: 55px;
+    width: 150px;
+    font-size: 25px;
+}
+
+.nav-link {
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: grey;
+}
+
+nav {
+    width: 250px;
+    height: 100vh;
+    background-color: #233244;
+}
+
+ul {
+    text-align: center;
+}
