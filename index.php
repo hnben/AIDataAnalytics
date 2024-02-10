@@ -19,14 +19,20 @@ $f3 = Base::instance(); //static method
 $f3->route('GET /', function() {
     // Display a view page
     $view = new Template();
+    echo $view->render('views/home.html');
+});
+
+// Routing to the Login Page
+$f3->route('GET /login', function() {
+    // Display a view page
+    $view = new Template();
     echo $view->render('views/login.html');
 });
 
-// Define a home route
-$f3->route('GET /home', function() {
+$f3->route('GET|POST /overview', function() {
     // Display a view page
     $view = new Template();
-    echo $view->render('views/home.html');
+    echo $view->render('views/overview.html');
 });
 
 $f3->run();

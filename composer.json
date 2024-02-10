@@ -3,17 +3,17 @@
   "description": "AI Buisness Data Analytics Tool",
   "authors": [
     {
-        "name": "Will Castillo",
-        "email": "castillo.william@student.greenriver.edu"
-      },
-      {
-        "name": "Huy Nguyen",
-        "email": "nguyen.huy@student.greenriver.edu"
-      },
-      {
-        "name": "Tien Nguyen",
-        "email": "tiennguyen3354@gmail.com"
-      }
+      "name": "Will Castillo",
+      "email": "castillo.william@student.greenriver.edu"
+    },
+    {
+      "name": "Huy Nguyen",
+      "email": "nguyen.huy@student.greenriver.edu"
+    },
+    {
+      "name": "Tien Nguyen",
+      "email": "tiennguyen3354@gmail.com"
+    }
   ],
   "require": {
     "bcosca/fatfree-core": "dev-master"
