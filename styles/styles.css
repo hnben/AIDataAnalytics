@@ -29,3 +29,12 @@ nav {
 ul {
     text-align: center;
 }
+
+
+.leftSide {
+    height: 100vh;
+}
+
+.homeButton {
+    padding: 10px 50px;
+}
