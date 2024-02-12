@@ -23,10 +23,24 @@ $f3->route('GET /', function() {
 });
 
 // Routing to the Login Page
-$f3->route('GET /login', function() {
+$f3->route('GET|POST /login', function($f3) {
+
     // Display a view page
-    $view = new Template();
-    echo $view->render('views/login.html');
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $username = $_POST['username'];
+        $password= $_POST['password'];
+
+        //hardcoded login right now
+        if ($username == "user" AND $password == "pass"){
+            $f3->reroute('overview');
+        }
+        else{
+            $f3->set('SESSION.loginStatus', "login failed");
+        }
+
+    }
+        $view = new Template();
+        echo $view->render('views/login.html');
 });
 
 $f3->route('GET|POST /overview', function() {

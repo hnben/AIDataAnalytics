@@ -162,3 +162,17 @@ body {
     position: relative;
     color: #929BA1;
 }
+
+/* login page css */
+
+#loginSection{
+    background-color:#E9E9E9;
+}
+
+#loginCard{
+    border-radius: 1rem;
+}
+
+#loginImage{
+    border-radius: 1rem 0 0 1rem;
+}
