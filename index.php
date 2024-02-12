@@ -22,6 +22,13 @@ $f3->route('GET /', function() {
     echo $view->render('views/home.html');
 });
 
+// Routing a home route
+$f3->route('GET /home', function() {
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/home.html');
+});
+
 // Routing to the Login Page
 $f3->route('GET|POST /login', function($f3) {
 
@@ -34,10 +41,10 @@ $f3->route('GET|POST /login', function($f3) {
         if ($username == "user" AND $password == "pass"){
             $f3->reroute('overview');
         }
+
         else{
             $f3->set('SESSION.loginStatus', "login failed");
         }
-
     }
         $view = new Template();
         echo $view->render('views/login.html');
