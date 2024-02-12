@@ -15,3 +15,16 @@ body{
 #loginImage{
     border-radius: 1rem 0 0 1rem;
 }
+
+
+
+/*home.html css page */
+.leftSide {
+    height: 100vh;
+}
+
+.homeButton {
+    padding: 10px 50px;
+}
+
+/*end of home.html css page*/
