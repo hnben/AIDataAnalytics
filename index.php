@@ -50,10 +50,40 @@ $f3->route('GET|POST /login', function($f3) {
         echo $view->render('views/login.html');
 });
 
+// Routing to the Overview Page
 $f3->route('GET|POST /overview', function() {
     // Display a view page
     $view = new Template();
     echo $view->render('views/overview.html');
 });
+
+// Routing to the Expense Page
+$f3->route('GET|POST /expense', function() {
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/expense.html');
+});
+
+// Routing to the Revenue Page
+$f3->route('GET|POST /revenue', function() {
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/revenue.html');
+});
+
+// Routing to the Sales Page
+$f3->route('GET|POST /sales', function() {
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/sales.html');
+});
+
+// Routing to the Trends Page
+$f3->route('GET|POST /trends', function() {
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/trends.html');
+});
+
 
 $f3->run();
