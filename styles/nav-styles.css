@@ -1,0 +1,22 @@
+#nav {
+    background-color: #233244;
+}
+
+.nav-item {
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+li:hover {
+    background-color: white;
+}
+
+.nav-link:hover {
+    color: grey;
+}
+
+.nav-link {
+    color: white;
+    text-align: center;
+}
