@@ -20,128 +20,124 @@ expenses, net gain, orders, and average order price.
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/navbar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Sales</title>
+    <title>Overview</title>
 </head>
 <body>
-<div class="wrapper">
-    <include href="views/navbar.html"></include>
-    <div class="main_content_nowrap">
-        <!-- CONTAINER THAT CONTAINS 2 ROWs  -->
-        <div class="container text-center">
-            <!-- create a row  -->
-            <div class="row py-3">
-                <div class="text-center col-10">
-                    <div class="btn-group w-100" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary py-3">Week</button>
-                        <button type="button" class="btn btn-primary py-3">Month</button>
-                        <button type="button" class="btn btn-primary py-3">Year</button>
+    <!--the whole page -->
+    <div class="wrapper">
+        <!--    includes the nav bar -->
+        <include href="views/navbar.html"></include>
+        <!--    end of nav bar -->
+        <!--    begin of main container -->
+        <div class="main_content_nowrap">
+            <!-- CONTAINER THAT CONTAINS 2 ROWs  -->
+            <div class="container text-center">
+                <!-- create a row of dataChanger -->
+                <include href="views/dataChange.html"></include>
+                <!-- end of a row  dataChanger -->
+
+                <!-- start of row 1 -->
+                <div class="row">
+                    <!-- Begining of col 1   -->
+                    <div class="col-md-4">
+                        <!-- start of the card  -->
+                        <div class="revenue-container bg-secondary card" style="height: 250px;">
+                            <div class="title text-start pb-5 px-2">
+                                <h2>Revenue</h2>
+                            </div>
+
+                            <!-- displays the number get from data  -->
+                            <div class="info">
+                                <h4 class="fs-1">$1,000,100</h4>
+                            </div>
+                            <!-- end of number display from data -->
+                        </div>
+                        <!-- end of card  -->
                     </div>
+                    <!-- end of col 1  -->
+
+                    <!-- Begining of col 2  -->
+                    <div class="col-md-4">
+                        <!-- start of the card  -->
+                        <div class="revenue-container bg-secondary card" style="height: 250px;">
+                            <div class="title text-start pb-5 px-2">
+                                <h2>Revenue</h2>
+                            </div>
+
+                            <!-- displays the number get from data  -->
+                            <div class="info">
+                                <h4 class="fs-1">$1,000,100</h4>
+                            </div>
+                            <!-- end of number display from data -->
+                        </div>
+                        <!-- end of card  -->
+                    </div>
+                    <!-- end of col 2   -->
+
+                    <!-- Begining of col 3   -->
+                    <div class="col-md-4">
+                        <!-- start of the card  -->
+                        <div class="revenue-container bg-secondary card" style="height: 250px;">
+                            <div class="title text-start pb-5 px-2">
+                                <h2>Revenue</h2>
+                            </div>
+
+                            <!-- displays the number get from data  -->
+                            <div class="info">
+                                <h4 class="fs-1">$1,000,100</h4>
+                            </div>
+                            <!-- end of number display from data -->
+                        </div>
+                        <!-- end of card  -->
+                    </div>
+                    <!-- end of col 3 -->
                 </div>
-                <div class="logoutButton col-2 text-end">
-                    <a class="btn btn-primary px-5 py-3" href="#" role="button">Logout</a>
+                <!-- end of a row 1   -->
+
+                <!-- start of row 2  -->
+                <div class="row mt-3">
+                    <!-- begining of col 1 -->
+                    <div class="col-md-6">
+                        <!-- start of the card  -->
+                        <div class="revenue-container bg-secondary card" style="height: 250px;">
+                            <div class="title text-start pb-5 px-2">
+                                <h2>Revenue</h2>
+                            </div>
+
+                            <!-- displays the number get from data  -->
+                            <div class="info">
+                                <h4 class="fs-1">$1,000,100</h4>
+                            </div>
+                            <!-- end of number display from data -->
+                        </div>
+                        <!-- end of card  -->
+                    </div>
+                    <!-- end of col 1  -->
+
+                    <!-- begining of col 2  -->
+                    <div class="col-md-6">
+                        <!-- start of the card  -->
+                        <div class="revenue-container bg-secondary card" style="height: 250px;">
+                            <div class="title text-start pb-5 px-2">
+                                <h2>Revenue</h2>
+                            </div>
+
+                            <!-- displays the number get from data  -->
+                            <div class="info">
+                                <h4 class="fs-1">$1,000,100</h4>
+                            </div>
+                            <!-- end of number display from data -->
+                        </div>
+                        <!-- end of card  -->
+                    </div>
+                    <!-- end of col 2  -->
                 </div>
+                <!-- end of row 2 -->
             </div>
-            <!-- end of a row  -->
-            <!-- start of row 1 -->
-            <div class="row">
-                <!-- Begining of col 1   -->
-                <div class="col-md-4">
-                    <!-- start of the card  -->
-                    <div class="revenue-container bg-secondary card" style="height: 250px;">
-                        <div class="title text-start pb-5 px-2">
-                            <h2>Revenue</h2>
-                        </div>
-
-                        <!-- displays the number get from data  -->
-                        <div class="info">
-                            <h4 class="fs-1">$1,000,100</h4>
-                        </div>
-                        <!-- end of number display from data -->
-                    </div>
-                    <!-- end of card  -->
-                </div>
-                <!-- end of col 1  -->
-
-                <!-- Begining of col 2  -->
-                <div class="col-md-4">
-                    <!-- start of the card  -->
-                    <div class="revenue-container bg-secondary card" style="height: 250px;">
-                        <div class="title text-start pb-5 px-2">
-                            <h2>Revenue</h2>
-                        </div>
-
-                        <!-- displays the number get from data  -->
-                        <div class="info">
-                            <h4 class="fs-1">$1,000,100</h4>
-                        </div>
-                        <!-- end of number display from data -->
-                    </div>
-                    <!-- end of card  -->
-                </div>
-                <!-- end of col 2   -->
-
-                <!-- Begining of col 3   -->
-                <div class="col-md-4">
-                    <!-- start of the card  -->
-                    <div class="revenue-container bg-secondary card" style="height: 250px;">
-                        <div class="title text-start pb-5 px-2">
-                            <h2>Revenue</h2>
-                        </div>
-
-                        <!-- displays the number get from data  -->
-                        <div class="info">
-                            <h4 class="fs-1">$1,000,100</h4>
-                        </div>
-                        <!-- end of number display from data -->
-                    </div>
-                    <!-- end of card  -->
-                </div>
-                <!-- end of col 3 -->
-            </div>
-            <!-- end of a row 1   -->
-
-            <!-- start of row 2  -->
-            <div class="row mt-3">
-                <!-- begining of col 1 -->
-                <div class="col-md-6">
-                    <!-- start of the card  -->
-                    <div class="revenue-container bg-secondary card" style="height: 250px;">
-                        <div class="title text-start pb-5 px-2">
-                            <h2>Revenue</h2>
-                        </div>
-
-                        <!-- displays the number get from data  -->
-                        <div class="info">
-                            <h4 class="fs-1">$1,000,100</h4>
-                        </div>
-                        <!-- end of number display from data -->
-                    </div>
-                    <!-- end of card  -->
-                </div>
-                <!-- end of col 1  -->
-
-                <!-- begining of col 2  -->
-                <div class="col-md-6">
-                    <!-- start of the card  -->
-                    <div class="revenue-container bg-secondary card" style="height: 250px;">
-                        <div class="title text-start pb-5 px-2">
-                            <h2>Revenue</h2>
-                        </div>
-
-                        <!-- displays the number get from data  -->
-                        <div class="info">
-                            <h4 class="fs-1">$1,000,100</h4>
-                        </div>
-                        <!-- end of number display from data -->
-                    </div>
-                    <!-- end of card  -->
-                </div>
-                <!-- end of col 2  -->
-            </div>
-            <!-- end of row 2 -->
+            <!-- END OF CONTAINER OF THE 2 ROWS   -->
         </div>
-        <!-- END OF CONTAINER OF THE 2 ROWS   -->
+        <!--    end of main container -->
     </div>
-</div>
+    <!--the whole page -->
 </body>
 </html>

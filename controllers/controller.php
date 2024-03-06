@@ -52,7 +52,7 @@ class Controller{
         echo $view->render('views/revenue.html');
     }
 
-    function sales ()
+    function sales()
     {
         $view = new Template();
         echo $view->render('views/sales.html');
