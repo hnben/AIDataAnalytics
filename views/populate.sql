@@ -29,7 +29,7 @@ CREATE TABLE `Revenue` (
    TotalAmount INT,
    Date DATE,
 
-   PRIMARY KEY (ID),
+   PRIMARY KEY (ID)
 );
 
 CREATE TABLE `Transaction` (
