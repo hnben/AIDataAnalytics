@@ -24,7 +24,6 @@ CREATE TABLE `Employee` (
     PRIMARY KEY (ID)
 );
 
-
 CREATE TABLE `Revenue` (
    ID INT NOT NULL AUTO_INCREMENT,
    TransactionID INT,
@@ -53,5 +52,4 @@ CREATE TABLE `Order`(
   PRIMARY KEY (ID),
     FOREIGN KEY (TransactionID) REFERENCES `Transaction` (ID)
 );
-
 
