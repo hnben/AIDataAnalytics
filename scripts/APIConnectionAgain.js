@@ -1,14 +1,9 @@
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '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';
 
 async function chatWithOpenAI() {
     const requestBody = {
         model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "user",
-                content: "can you say hello to me"
-            }
-        ]
+        messages: [{ role: "user", content: "can you tell me about Japanese seiyuus?" }],
     };
 
     try {
@@ -28,7 +23,8 @@ async function chatWithOpenAI() {
         const data = await response.json();
         console.log(data);
         console.log(data.choices[0].message.content);
-        document.getElementById("response").textContent = data.choices[0].message.content;
+        const repsonseObject = document.getElementById('response');
+        repsonseObject.textContent = data.choices[0].message.content;
         // Handle response data here
 
     } catch (error) {
