@@ -64,4 +64,9 @@ class Controller{
         echo $view->render('views/trends.html');
     }
 
+    function form()
+    {
+        $view = new Template();
+        echo $view->render('views/newForm.html');
+    }
 }
