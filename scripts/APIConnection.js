@@ -1,8 +1,8 @@
 // OPEN AI's API calls for message generation
 
 async function fetchData() {
-    const url = "https://api.openai.com/v1/engines/davinci-codex/completions";  // Replace with the correct API endpoint
-    const apiKey = "API_KEY";
+    const url = "https://api.openai.com/v1/chat/completions";  // Replace with the correct API endpoint
+    const apiKey = "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";
 
     const data = {
         prompt: "Generate responses saying Hello",
