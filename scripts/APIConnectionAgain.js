@@ -1,6 +1,7 @@
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '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';
 
 async function chatWithOpenAI() {
+
     const requestBody = {
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: " given these set of inserts into the order sql table, can you give us some statistics about these orders? INSERT INTO `Order` (TransactionID, CATEGORY, ItemName, Quantity) VALUES (5, 'Drink', 'Soda', 2);\n" +
