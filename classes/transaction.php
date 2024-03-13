@@ -2,39 +2,26 @@
 
 class Transaction extends Revenue
 {
-    private $_itemsOrderedArray; // String
-    private $_amountOrderedArray; // String
+    private $_orderSize; // String
 
-    public function __construct($type, $date, $totalAmount,
-        $itemsOrderedArray, $amountOrderedArray)
+    public function __construct($type, $date, $totalAmount, $orderSize)
     {
         parent::__construct($type, $date, $totalAmount);
-        $this->_itemsOrderedArray = $itemsOrderedArray;
-        $this->_amountOrderedArray = $amountOrderedArray;
+        $this->_orderSize = $orderSize;
     }
 
     //*****************
     //     SETTERS
     //*****************
-    public function setItemsOrderedArray($itemsOrderedArray)
+    public function setOrderSize($orderSize)
     {
-        $this->_itemsOrderedArray = $itemsOrderedArray;
+        $this->_orderSize = $orderSize;
     }
-
-    public function setAmountOrderedArray($amountOrderedArray)
-    {
-        $this->_amountOrderedArray = $amountOrderedArray;
-    }
-
     //*****************
     //     GETTERS
     //*****************
-    public function getItemsOrderedArray()
+    public function getOrderSize()
     {
-        return $this->_itemsOrderedArray;
-    }
-    public function getAmountOrderedArray()
-    {
-        return $this->_amountOrderedArray;
+        return $this->_orderSize;
     }
 }

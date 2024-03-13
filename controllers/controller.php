@@ -60,6 +60,8 @@ class Controller{
 
     function trends()
     {
+
+
         $view = new Template();
         echo $view->render('views/testTrends.html');
     }

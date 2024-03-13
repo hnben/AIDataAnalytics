@@ -23,4 +23,9 @@ class DataLayer {
 
         return $foodPrices[$name] * $quantity;
     }
+
+    static function calcAvgOrder($orderArray){
+
+
+    }
 }
