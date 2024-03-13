@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 
 class AccessDatabase
 {
-    static function getAllOrders()
-    {
+    static function getAllOrders(){
         //connect to database
         require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
 
@@ -17,9 +16,12 @@ class AccessDatabase
         } catch (PDOException $e) {
             echo $e->getMessage(); //temporary
         }
+        //Initialize Variable
+        $orderArray = array();
 
         //1. Define the query
-        $sql = "SELECT `Order`.ID, `Order`.TransactionID, `Order`.Category, `Order`.ItemName, `Order`.Quantity, `Transaction`.Date
+        $sql = "
+        SELECT `Order`.ID, `Order`.TransactionID, `Order`.Category, `Order`.ItemName, `Order`.Quantity, `Transaction`.Date
         FROM `Order`
         JOIN `Transaction` ON `Order`.TransactionID = `Transaction`.ID;";
 
@@ -38,15 +40,26 @@ class AccessDatabase
 
         if ($statement->rowCount() == 0) {
             echo "<p> No match found</p>";
-        } else {
+        }
+        else {
             foreach ($results as $result) {
                 $category = $result['Category'];
-                $itemName = $result['ItemName'];
+                $item = $result['ItemName'];
                 $quantity = $result['Quantity'];
-                $transactionDate = $result['Date'];
+                $date = $result['Date'];
 
+                $orderObject = new Orders($category, $date, DataLayer::getItemPrice($item, $quantity), $item, $quantity);
+                $orderArray[] = $orderObject;
             }
         }
-        return $result;
+        return $orderArray;
     }
+
+    static function getAllTransaction(){
+        require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
+
+
+
+    }
+
 }
