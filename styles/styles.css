@@ -28,7 +28,17 @@ body{
 }
 
 .homeButton {
+    background-color: #23314c;
     padding: 10px 50px;
+    color: rgba(250, 250, 250, 0.93);
+}
+.homeButton:hover {
+    background-color: #3c7a8a;
+    color: #ffffff; ;
 }
 
+.background-color {
+    background: #23314c;
+    color: #bdbbbb;
+}
 /*end of home.html css page*/
