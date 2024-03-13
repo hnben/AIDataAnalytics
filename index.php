@@ -63,5 +63,16 @@ $f3->route('GET|POST /trends', function() {
     $GLOBALS['controller']->trends();
 });
 
+// Routing to the Trends Page
+$f3->route('GET|POST /form', function() {
+    // Display a view page
+    $GLOBALS['controller']->form();
+});
+
+// Routing to the analysis options Page
+$f3->route('GET|POST /analysisoptions', function() {
+    // Display a view page
+    $GLOBALS['controller']->analysisOptions();
+});
 
 $f3->run();
