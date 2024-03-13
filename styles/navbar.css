@@ -6,9 +6,32 @@
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
   } */
-body{
-    background-color: #504d62;
+/* this will be the color css */
+.background-color {
+    background-color: #e9e9ef;
 }
+.revenue-color {
+    color : rgba(108, 175, 96, 0.76);
+}
+.expense-color {
+    color: rgba(225, 75, 75, 0.82);
+}
+.sticky-color {
+    background-color: #4c5493;
+    color: rgb(209, 209, 209);
+}
+/*end of color css */
+/*card-container style*/
+.overview-container {
+    height: 250px;
+    background-color: white;
+}
+
+.info-body{
+    height: 550px;
+    width: 100%;
+}
+/*end of card container style */
 .greyColor  {
     border: none;
     background-color: #fdfdfd;
@@ -31,34 +54,34 @@ body{
     position: fixed;
 }
 
-.wrapper .sidebar h2{
-    color: #dfdfdf;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 30px;
-}
+/*.wrapper .sidebar h2{*/
+/*    color: #dfdfdf;*/
+/*    text-transform: uppercase;*/
+/*    text-align: center;*/
+/*    margin-bottom: 30px;*/
+/*}*/
 
-.wrapper .sidebar ul li{
-    list-style: none;
-    padding: 25px;
-    border-bottom: 1px solid #bdb8d7;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
+/*.wrapper .sidebar ul li{*/
+/*    list-style: none;*/
+/*    padding: 25px;*/
+/*    border-bottom: 1px solid #bdb8d7;*/
+/*    border-bottom: 1px solid rgba(0,0,0,0.05);*/
+/*    border-top: 1px solid rgba(255,255,255,0.05);*/
+/*}*/
 
-.wrapper .sidebar ul li a{
-    color: #bdb8d7;
-    text-decoration: none;
-}
+/*.wrapper .sidebar ul li a{*/
+/*    color: #bdb8d7;*/
+/*    text-decoration: none;*/
+/*}*/
 
 
-.wrapper .sidebar ul li:hover{
-    background-color: #a59fc5;
-}
+/*.wrapper .sidebar ul li:hover{*/
+/*    background-color: #a59fc5;*/
+/*}*/
 
-.wrapper .sidebar ul li:hover a{
-    color: #1e2837;
-}
+/*.wrapper .sidebar ul li:hover a{*/
+/*    color: #1e2837;*/
+/*}*/
 
 
 .wrapper .main_content_nowrap{

@@ -22,12 +22,21 @@ expenses, net gain, orders, and average order price.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Overview</title>
 </head>
-<body>
+<body class="background-color">
     <!--the whole page -->
     <div class="wrapper">
-        <!--    includes the nav bar -->
-        <include href="views/navbar.html"></include>
-        <!--    end of nav bar -->
+        <!-- NAV  -->
+        <div class="sidebar">
+            <h2>LOGO </h2>
+            <ul class="list-group">
+                <li><a href="overview" class="list-group-item p-4 text-center mx-2 my-2 mt-4 sticky-color">Overview</a></li>
+                <li><a href="expense" class="list-group-item p-4 text-center mx-2 my-2 greyColor">Expense</a></li>
+                <li><a href="revenue" class="list-group-item p-4 text-center mx-2 my-2 greyColor">Revenue</a></li>
+                <li><a href="sales" class="list-group-item p-4 text-center mx-2 my-2 greyColor">Sales</a></li>
+                <li><a href="trends" class="list-group-item p-4 text-center mx-2 my-2 greyColor">Trends</a></li>
+            </ul>
+        </div>
+        <!-- END OF NAV  -->
         <!--    begin of main container -->
         <div class="main_content_nowrap">
             <!-- CONTAINER THAT CONTAINS 2 ROWs  -->
@@ -41,14 +50,14 @@ expenses, net gain, orders, and average order price.
                     <!-- Begining of col 1   -->
                     <div class="col-md-4">
                         <!-- start of the card  -->
-                        <div class="revenue-container card border-dark" style="height: 250px;">
+                        <div class="overview-container card">
                             <div class="title text-start pb-5 px-2">
-                                <h2>Revenue</h2>
+                                <h2 class="text-secondary">Revenue</h2>
                             </div>
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1">$1,000,100</h4>
+                                <h4 class="fs-1 revenue-color">$1,000,100</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -59,14 +68,14 @@ expenses, net gain, orders, and average order price.
                     <!-- Begining of col 2  -->
                     <div class="col-md-4">
                         <!-- start of the card  -->
-                        <div class="revenue-container border-dark card" style="height: 250px;">
+                        <div class="overview-container card">
                             <div class="title text-start pb-5 px-2">
-                                <h2>Revenue</h2>
+                                <h2 class="text-secondary">Expense</h2>
                             </div>
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1">$1,000,100</h4>
+                                <h4 class="fs-1 expense-color">$1,000,100</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -77,14 +86,14 @@ expenses, net gain, orders, and average order price.
                     <!-- Begining of col 3   -->
                     <div class="col-md-4">
                         <!-- start of the card  -->
-                        <div class="revenue-container border-dark card" style="height: 250px;">
+                        <div class="overview-container card">
                             <div class="title text-start pb-5 px-2">
-                                <h2>Revenue</h2>
+                                <h2 class="text-secondary">Net Gain</h2>
                             </div>
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1">$1,000,100</h4>
+                                <h4 class="fs-1 revenue-color">$1,000,100</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -99,14 +108,14 @@ expenses, net gain, orders, and average order price.
                     <!-- begining of col 1 -->
                     <div class="col-md-6">
                         <!-- start of the card  -->
-                        <div class="revenue-container border-dark card" style="height: 250px;">
+                        <div class="overview-container card">
                             <div class="title text-start pb-5 px-2">
-                                <h2>Revenue</h2>
+                                <h2 class="text-secondary">Transactions</h2>
                             </div>
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1">$1,000,100</h4>
+                                <h4 class="fs-1"> 17 </h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -117,9 +126,9 @@ expenses, net gain, orders, and average order price.
                     <!-- begining of col 2  -->
                     <div class="col-md-6">
                         <!-- start of the card  -->
-                        <div class="revenue-container border-dark card" style="height: 250px;">
+                        <div class="overview-container card">
                             <div class="title text-start pb-5 px-2">
-                                <h2>Revenue</h2>
+                                <h2 class="text-secondary">Average Order Price</h2>
                             </div>
 
                             <!-- displays the number get from data  -->
