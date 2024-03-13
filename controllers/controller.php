@@ -69,4 +69,10 @@ class Controller{
         $view = new Template();
         echo $view->render('views/newForm.html');
     }
+
+    function analysisOptions()
+    {
+        $view = new Template();
+        echo $view->render('views/analysis-options.html');
+    }
 }
