@@ -2,11 +2,13 @@
 
 class Transaction extends Revenue
 {
-    private $_itemsOrderedArray; // array
-    private $_amountOrderedArray; // array
+    private $_itemsOrderedArray; // String
+    private $_amountOrderedArray; // String
 
-    public function __construct($itemsOrderedArray, $amountOrderedArray)
+    public function __construct($type, $date, $totalAmount,
+        $itemsOrderedArray, $amountOrderedArray)
     {
+        parent::__construct($type, $date, $totalAmount);
         $this->_itemsOrderedArray = $itemsOrderedArray;
         $this->_amountOrderedArray = $amountOrderedArray;
     }

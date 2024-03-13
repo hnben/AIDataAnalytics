@@ -119,3 +119,82 @@ INSERT INTO `Order` (TransactionID, CATEGORY, ItemName, Quantity) VALUES (10, 'E
 
 
 -- populate transactions
+-- Insert for TransactionID 1
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (31.00, '2024-03-01');
+
+-- Insert for TransactionID 2
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (137.00, '2024-03-01');
+
+-- Insert for TransactionID 3
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (39.00, '2024-03-01');
+
+-- Insert for TransactionID 4
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (106.00, '2024-03-02');
+
+-- Insert for TransactionID 5
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (90.50, '2024-03-02');
+
+-- Insert for TransactionID 6
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (35.50, '2024-03-03');
+
+-- Insert for TransactionID 7
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (126.00, '2024-03-03');
+
+-- Insert for TransactionID 8
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (114.50, '2024-03-03');
+
+-- Insert for TransactionID 9
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (67.50, '2024-03-04');
+
+-- Insert for TransactionID 10
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (121.00, '2024-03-04');
+
+-- Insert for TransactionID 12
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (46.50, '2024-03-04');
+
+-- Insert for TransactionID 13
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (53.00, '2024-03-05');
+
+-- Insert for TransactionID 14
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (79.00, '2024-03-05');
+
+-- Insert for TransactionID 17
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (79.50, '2024-03-05');
+
+-- Insert for TransactionID 18
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (61.00, '2024-03-06');
+
+-- Insert for TransactionID 19
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (17.50, '2024-03-06');
+
+-- Insert for TransactionID 20
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (37.00, '2024-03-06');
+
+-- Insert for TransactionID 21
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (41.00, '2024-03-06');
+
+-- Insert for TransactionID 22
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (54.00, '2024-03-06');
+
+-- Insert for TransactionID 23
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (57.00, '2024-03-07');
+
+-- Insert for TransactionID 24
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (33.00, '2024-03-07');
+
+-- Insert for TransactionID 25
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (68.50, '2024-03-07');
+
+-- Insert for TransactionID 26
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (38.50, '2024-03-07');
+
+-- Insert for TransactionID 28
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (62.50, '2024-03-07');
+
+-- Insert for TransactionID 29
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (30.00, '2024-03-07');
+
+-- Insert for TransactionID 30
+INSERT INTO `Transaction` (TotalAmount, Date) VALUES (56.50, '2024-03-07');
+
+-- Insert for Revenue table
