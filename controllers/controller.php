@@ -1,9 +1,11 @@
 <?php
 class Controller{
     private $_f3;
+    private $_database;
 
     public function __construct($f3)
     {
+        $this->_database = new AccessDatabase();
         $this->_f3 = $f3;
     }
 
@@ -38,9 +40,9 @@ class Controller{
         //setting things to fat-free hive
 
         //database object to get stuff from database
-        $database = new AccessDatabase();
-        $revenueArray = $database->getAllTransaction();
-        $expenseArray = $database->getAllExpense();
+
+        $revenueArray = $this->_database->getAllTransaction();
+        $expenseArray = $this->_database->getAllExpense();
 
         //set into the overview object
         $overviewObject = new Overview($expenseArray, $revenueArray, 10);
@@ -59,25 +61,44 @@ class Controller{
 
     function expense ()
     {
+//        putting the empty fields right now, FOR YOU HUY, you can add to this.
+        $type = "";
+        $date = "";
+        $totalAmount = "worked";
+
+        //set into the overview object
+        $expenseObject = new Expenses($type, $date, $totalAmount);
+
+        //set fat free object of the overview page
+        $this->_f3->set('SESSION.expense', $expenseObject);
+
+//       display the page
         $view = new Template();
         echo $view->render('views/expense.html');
     }
 
     function revenue()
     {
+        $date = "";
+        $totalAmount = "worked";
+
+        //set into the overview object
+        $revenueObject = new Revenue($date, $totalAmount);
+
+        $this->_f3->set('SESSION.revenue', $revenueObject);
         $view = new Template();
         echo $view->render('views/revenue.html');
     }
 
     function sales()
     {
+//        currently not using
         $view = new Template();
         echo $view->render('views/sales.html');
     }
 
     function trends()
     {
-
 
         $view = new Template();
         echo $view->render('views/testTrends.html');
