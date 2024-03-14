@@ -24,8 +24,31 @@ class DataLayer {
         return $foodPrices[$name] * $quantity;
     }
 
-    static function calcAvgOrder($orderArray){
-
-
+    static function getNumberOfTransaction(): int
+    {
+        $database = new AccessDatabase();
+        $transactionArray = $database->getAllTransaction();
+        return count($transactionArray);
     }
+
+    static function getAvgTransactionPrice(){
+        $total = 0;
+        $database = new AccessDatabase();
+        $transactionArray = $database->getAllTransaction();
+
+        //if the transaction array is empty
+        if (count($transactionArray) > 0) {
+            foreach ($transactionArray as $transaction){
+                $total += $transaction->getTotalAmount();
+            }
+            $avg = $total / count($transactionArray);
+            return number_format($avg, 2);
+
+        } else {
+            return 0;
+        }
+    }
+
+
+
 }

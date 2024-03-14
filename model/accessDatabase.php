@@ -16,7 +16,8 @@ class AccessDatabase
         try
         {
             // Instantiate a PDO database connection object
-            require_once($_SERVER["DOCUMENT_ROOT"]. '/../config.php');
+            //connect to database
+            require_once ($_SERVER["DOCUMENT_ROOT"].'/../config.php');
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
             //            echo 'Connected to database!';
         }
