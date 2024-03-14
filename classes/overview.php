@@ -36,7 +36,7 @@ class Overview
         return $total;
     }
 
-    public function calcNetRevenue()
+    public function calcRevenue()
     {
         $total = 0;
         //checks if the array is empty
@@ -48,6 +48,25 @@ class Overview
             return 0;
         }
         return $total;
+    }
+
+    public function getTransactionNumber()
+    {
+        return count($this->_arrayOfRevenue);
+    }
+
+    public function getAvgTransactionPrice()
+    {
+        $total = $this->calcNetRevenue();
+
+        //not empty so thus get a total
+        if (count($this->_arrayOfRevenue) > 0){
+            $avg=$total / count($this->_arrayOfRevenue);
+            return number_format($avg, 2);
+        }
+        else{
+            return 0;
+        }
     }
 
     //*****************

@@ -42,7 +42,10 @@ class Controller{
         $revenueArray = $database->getAllTransaction();
         $expenseArray = $database->getAllExpense();
 
+        //set into the overview object
         $overviewObject = new Overview($expenseArray, $revenueArray, 10);
+
+        //set fat free object of the overview page
         $this->_f3->set('SESSION.overview', $overviewObject);
 
         // Display a view page
