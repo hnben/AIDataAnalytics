@@ -48,4 +48,37 @@ class DataLayer {
             return 0;
         }
     }
+
+    function getGPTPrompt($startDate, $endDate, $type){
+        $prompt = "can you give me a " . $type ." analysis of the this lot of data and potentially anything unique you find about the data: ";
+        $count = 1;
+        $database = new AccessDatabase();
+
+        $orderArray = $database->getAllOrders();
+        $selectedArray = array();
+
+        //selects the objects within the date range
+        foreach ($orderArray as $order){
+            $objDate = $order->getDate();
+
+            if ($objDate >= $startDate && $objDate <= $endDate){
+                $selectedArray[] = $order;
+            }
+        }
+
+        //format information about the selected array
+        foreach ($selectedArray as $order){
+            $date = $order->getDate();
+            $quantity = $order->getAmount();
+            $item = $order->getItems();
+            $totalCost = self::getItemPrice($item, $quantity);
+
+            $line = "Order $count: Date: $date, Item: $item, Quantity: $quantity, Total Cost: $totalCost\n";
+            $count++;
+            $prompt .=  $line;
+        }
+
+        return $prompt;
+    }
+
 }
