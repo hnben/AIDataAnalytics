@@ -42,7 +42,7 @@
                                     <h1 class="text-secondary">Total Expense</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.expense->calcExpenses() }}</h1>
+                                    <h1>${{ @SESSION.expense->calcExpenses() }}</h1>
                                 </div>
                             </div>
         <!--                     end of row 1 -->
@@ -52,7 +52,7 @@
                                     <h1 class="text-secondary">Overhead</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Overhead") }}</h1>
+                                    <h1>${{ @SESSION.expense->getExpenseBreakdown("Overhead") }}</h1>
                                 </div>
                             </div>
         <!--                     end of row 2 -->
@@ -62,7 +62,7 @@
                                     <h1 class="text-secondary">Labor</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Labor") }}</h1>
+                                    <h1>${{ @SESSION.expense->getExpenseBreakdown("Labor") }}</h1>
                                 </div>
                             </div>
         <!--                    end of row 3 -->
@@ -72,7 +72,7 @@
                                     <h1 class="text-secondary">Material</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Material") }}</h1>
+                                    <h1>${{ @SESSION.expense->getExpenseBreakdown("Material") }}</h1>
                                 </div>
                             </div>
                             <!--                    end of row 4 -->

@@ -43,7 +43,7 @@
                                     <h1 class="text-secondary">Total Revenue</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.revenue->calcRevenue()}}</h1>
+                                    <h1>${{ @SESSION.revenue->calcRevenue()}}</h1>
                                 </div>
                             </div>
                             <!--                     end of row 1 -->
@@ -53,7 +53,7 @@
                                     <h1 class="text-secondary">Drinks</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.revenue->getRevenueBreakdown("Drink")}}</h1>
+                                    <h1>${{ @SESSION.revenue->getRevenueBreakdown("Drink")}}</h1>
                                 </div>
                             </div>
                             <!--                     end of row 2 -->
@@ -63,7 +63,7 @@
                                     <h1 class="text-secondary">Appetizers</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.revenue->getRevenueBreakdown("Appetizer")}}</h1>
+                                    <h1>${{ @SESSION.revenue->getRevenueBreakdown("Appetizer")}}</h1>
                                 </div>
                             </div>
                             <!--                    end of row 3 -->
@@ -73,7 +73,7 @@
                                     <h1 class="text-secondary">Desserts</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.revenue->getRevenueBreakdown("Dessert")}}</h1>
+                                    <h1>${{ @SESSION.revenue->getRevenueBreakdown("Dessert")}}</h1>
                                 </div>
                             </div>
                             <!--                    end of row 4 -->
@@ -83,7 +83,7 @@
                                     <h1 class="text-secondary">Entree</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.revenue->getRevenueBreakdown("Entree")}}</h1>
+                                    <h1>${{ @SESSION.revenue->getRevenueBreakdown("Entree")}}</h1>
                                 </div>
                             </div>
                             <!--                    end of row 5 -->
@@ -96,14 +96,14 @@
                 <div class="col-4">
                     <div class="info-body card">
                         <div class="text-center">
-                            <h1 class="card-title text-secondary mt-4"> Add Transactions </h1>
+                            <h1 class="card-title text-secondary mt-4"> Add Order </h1>
                         </div>
 
                         <!--                        start of form -->
                         <form action="#" method="post">
                             <div class="mx-5 my-2">
                                 <label for="transactionID" class="form-label"><strong>Transaction ID</strong></label>
-                                <input type="text" class="form-control border-secondary" name= "transactionID" id="transactionID" value="" placeholder="Total amount (e.g., 100.00)">
+                                <input type="text" class="form-control border-secondary" name= "transactionID" id="transactionID" value="" placeholder="transactionID associated with this order">
                                 <check if="{{ isset(@errors['transactionID']) }}">
                                     <span class="text-danger">{{ @errors['transactionID'] }}</span>
                                 </check>
