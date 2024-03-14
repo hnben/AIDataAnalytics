@@ -35,9 +35,21 @@ class Controller{
 
     function overview ()
     {
+        //setting things to fat-free hive
+
+        //database object to get stuff from database
+        $database = new AccessDatabase();
+        $revenueArray = $database->getAllTransaction();
+
+
+
         // Display a view page
         $view = new Template();
         echo $view->render('views/overview.html');
+
+
+
+
     }
 
     function expense ()

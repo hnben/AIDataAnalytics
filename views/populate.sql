@@ -198,4 +198,20 @@ INSERT INTO `Transaction` (TotalAmount, Date) VALUES (30.00, '2024-03-07');
 -- Insert for TransactionID 30
 INSERT INTO `Transaction` (TotalAmount, Date) VALUES (56.50, '2024-03-07');
 
--- Insert for Revenue table
+-- Insert for Expense table
+INSERT INTO `Expense` (`ID`, `TotalAmount`, `Type`, `Date`) VALUES
+(1, 188.01, 'Material', '2024-03-01'),
+(2, 168.05, 'Material', '2024-03-02'),
+(3, 176.21, 'Material', '2024-03-03'),
+(4, 276.89, 'Material', '2024-03-04'),
+(5, 155.84, 'Material', '2024-03-05'),
+(6, 248.51, 'Material', '2024-03-06'),
+(7, 275.05, 'Material', '2024-03-07'),
+(8, 129.73, 'Labor', '2024-03-01'),
+(9, 123.49, 'Labor', '2024-03-02'),
+(10, 128.25, 'Labor', '2024-03-03'),
+(11, 170.79, 'Labor', '2024-03-04'),
+(12, 169.18, 'Labor', '2024-03-05'),
+(13, 233.54, 'Labor', '2024-03-06'),
+(14, 160.17, 'Labor', '2024-03-07'),
+(15, 500.00, 'Overhead', '2024-03-01');

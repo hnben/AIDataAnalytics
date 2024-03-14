@@ -23,7 +23,7 @@ class AccessDatabase
         }
         catch (PDOException $e)
         {
-            echo $e->getMessage(); # temporary
+            echo $e->getMessage(); # temporaryyeah
             echo "<p>Oops! Unable to connect.</p>";
         }
     }
@@ -154,6 +154,37 @@ class AccessDatabase
         return $transactionArray;
     }
 
+    function getAllExpense(){
+        $expenseArray = array();
+
+        //set up sql query
+        $sql = "SELECT * FROM `Expense` ";
+
+        //prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //execute the statement
+        $statement->execute();
+
+        //do stuff with the results
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($statement->rowCount() == 0) {
+            echo "<p> No match found</p>";
+        }
+        else{
+            foreach ($results as $result){
+                $totalAmount = $result['TotalAmount'];
+                $type = $result['Type'];
+                $date = $result['Date'];
+
+                $expenseObject = new Expenses($type, $date, $totalAmount);
+                $expenseArray[] = $expenseObject;
+            }
+        }
+        return $expenseArray;
+    }
+
     function saveOrder($order) : void
     {
         // INSERT Query **********
@@ -172,6 +203,4 @@ class AccessDatabase
         // 4. Execute the query
         $statement->execute();
     }
-
-
 }
