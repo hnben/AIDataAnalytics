@@ -42,17 +42,17 @@
                                     <h1 class="text-secondary">Total Expense</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>{{ @SESSION.expense->getTotalAmount() }}</h1>
+                                    <h1>{{ @SESSION.expense->calcExpenses() }}</h1>
                                 </div>
                             </div>
         <!--                     end of row 1 -->
         <!--                    start of row2 -->
                             <div class="row py-2">
                                 <div class="col-6 text-end">
-                                    <h1 class="text-secondary">Utilities</h1>
+                                    <h1 class="text-secondary">Overhead</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>----</h1>
+                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Overhead") }}</h1>
                                 </div>
                             </div>
         <!--                     end of row 2 -->
@@ -62,17 +62,17 @@
                                     <h1 class="text-secondary">Labor</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>$$$$$</h1>
+                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Labor") }}</h1>
                                 </div>
                             </div>
         <!--                    end of row 3 -->
         <!--                    start of row 4 -->
                             <div class="row py-2">
                                 <div class="col-6 text-end">
-                                    <h1 class="text-secondary">Consumed Product</h1>
+                                    <h1 class="text-secondary">Material</h1>
                                 </div>
                                 <div class="col-6">
-                                    <h1>$$$$$</h1>
+                                    <h1>{{ @SESSION.expense->getExpenseBreakdown("Material") }}</h1>
                                 </div>
                             </div>
                             <!--                    end of row 4 -->

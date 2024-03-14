@@ -3,7 +3,7 @@
 class Orders extends Revenue{
     private $_transactionID;
     private $_category;
-    private $_item; // String
+    private $_item;
     private $_amount; // String
 
     public function __construct($date, $totalAmount,
@@ -43,5 +43,8 @@ class Orders extends Revenue{
     public function getTransactionID()
     {
         return $this->_transactionID;
+    }
+    public function getCategory(){
+        return $this->_category;
     }
 }

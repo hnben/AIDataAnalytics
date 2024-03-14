@@ -37,10 +37,7 @@ class Controller{
 
     function overview ()
     {
-        //setting things to fat-free hive
-
         //database object to get stuff from database
-
         $revenueArray = $this->_database->getAllTransaction();
         $expenseArray = $this->_database->getAllExpense();
 
@@ -54,20 +51,16 @@ class Controller{
         $view = new Template();
         echo $view->render('views/overview.html');
 
-
-
-
     }
 
     function expense ()
     {
-//        putting the empty fields right now, FOR YOU HUY, you can add to this.
-        $type = "";
-        $date = "";
-        $totalAmount = "worked";
+        //update the overview object
+        $revenueArray = $this->_database->getAllTransaction();
+        $expenseArray = $this->_database->getAllExpense();
 
         //set into the overview object
-        $expenseObject = new Expenses($type, $date, $totalAmount);
+        $expenseObject = new Overview($expenseArray, $revenueArray, 10);
 
         //set fat free object of the overview page
         $this->_f3->set('SESSION.expense', $expenseObject);
@@ -79,13 +72,16 @@ class Controller{
 
     function revenue()
     {
-        $date = "";
-        $totalAmount = "worked";
+        //update the overview object
+        $revenueArray = $this->_database->getAllTransaction();
+        $expenseArray = $this->_database->getAllExpense();
 
         //set into the overview object
-        $revenueObject = new Revenue($date, $totalAmount);
+        $revenueObject = new Overview($expenseArray, $revenueArray, 10);
 
+        //set fat free object of the overview page
         $this->_f3->set('SESSION.revenue', $revenueObject);
+
         $view = new Template();
         echo $view->render('views/revenue.html');
     }

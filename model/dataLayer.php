@@ -48,8 +48,4 @@ class DataLayer {
             return 0;
         }
     }
-
-
-
-
 }
