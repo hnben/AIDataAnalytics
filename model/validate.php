@@ -1,5 +1,15 @@
 <?php
+    /**
+     *This class will validate the data that is collected through the
+     * form that the user put in.
+     */
     class Validate {
+
+        /**
+         * @param $string String this will let user input a string into the method
+         * @return bool this will return a boolean base on the string, if it is a value string, it will
+         * return true, else it will return false.
+         */
         static function validateString($string) {
             // Check if the input is a string
             if (is_string($string)) {
@@ -15,6 +25,10 @@
             }
         }
 
+        /**
+         * @param $number int this parameter will collect the ints that the user input.
+         * @return bool this method will return true if $number is an int , and false if $number is not a number.
+         */
         static function validateNumber($number) {
             // Check if the input is numeric
             if (is_numeric($number)) {
@@ -25,6 +39,12 @@
                 return false;
             }
         }
+
+        /**
+         * @param $date String the parameter will collect a string of Date that the user inputed.
+         * @return bool In the method, there will be a specific pattern that will validate the date, it will
+         * return true if the pattern matches the date param, false if it does not match.
+         */
         static function validateDate($date) {
             // Check if the input is a string
             if (is_string($date)) {
