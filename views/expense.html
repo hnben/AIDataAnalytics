@@ -26,56 +26,100 @@
 
     <div class="main_content_nowrap">
         <!-- CONTAINER THAT CONTAINS ROWs  -->
-        <div class="container text-center">
+        <div class="container">
             <!-- create a row of dataChanger -->
             <include href="views/dataChange.html"></include>
             <!-- end of a row  dataChanger -->
             <!-- Card for expense body  -->
-            <div class="info-body card">
-                <div class="container">
-<!--                    row 1  -->
-                    <div class="row p-5">
-                        <div class="col-6 text-end">
-                            <h1 class="text-secondary">Total Expense</h1>
-                        </div>
-                        <div class="col-6">
-                            <h1>{{ @SESSION.expense->getTotalAmount() }}</h1>
-                        </div>
+<!--            create a new row with 2 col -->
+            <div class="row">
+<!--                start of col-1 stores the data -->
+                <div class="col-8 text-center">
+                    <div class="info-body card">
+        <!--                    row 1  -->
+                            <div class="row p-5">
+                                <div class="col-6 text-end">
+                                    <h1 class="text-secondary">Total Expense</h1>
+                                </div>
+                                <div class="col-6">
+                                    <h1>{{ @SESSION.expense->getTotalAmount() }}</h1>
+                                </div>
+                            </div>
+        <!--                     end of row 1 -->
+        <!--                    start of row2 -->
+                            <div class="row py-2">
+                                <div class="col-6 text-end">
+                                    <h1 class="text-secondary">Utilities</h1>
+                                </div>
+                                <div class="col-6">
+                                    <h1>----</h1>
+                                </div>
+                            </div>
+        <!--                     end of row 2 -->
+        <!--                    start of row 3 -->
+                            <div class="row py-2">
+                                <div class="col-6 text-end">
+                                    <h1 class="text-secondary">Labor</h1>
+                                </div>
+                                <div class="col-6">
+                                    <h1>$$$$$</h1>
+                                </div>
+                            </div>
+        <!--                    end of row 3 -->
+        <!--                    start of row 4 -->
+                            <div class="row py-2">
+                                <div class="col-6 text-end">
+                                    <h1 class="text-secondary">Consumed Product</h1>
+                                </div>
+                                <div class="col-6">
+                                    <h1>$$$$$</h1>
+                                </div>
+                            </div>
+                            <!--                    end of row 4 -->
                     </div>
-<!--                     end of row 1 -->
-<!--                    start of row2 -->
-                    <div class="row py-2">
-                        <div class="col-6 text-end">
-                            <h1 class="text-secondary">Utilities</h1>
-                        </div>
-                        <div class="col-6">
-                            <h1>----</h1>
-                        </div>
-                    </div>
-<!--                     end of row 2 -->
-<!--                    start of row 3 -->
-                    <div class="row py-2">
-                        <div class="col-6 text-end">
-                            <h1 class="text-secondary">Labor</h1>
-                        </div>
-                        <div class="col-6">
-                            <h1>$$$$$</h1>
-                        </div>
-                    </div>
-<!--                    end of row 3 -->
-<!--                    start of row 4 -->
-                    <div class="row py-2">
-                        <div class="col-6 text-end">
-                            <h1 class="text-secondary">Consumed Product</h1>
-                        </div>
-                        <div class="col-6">
-                            <h1>$$$$$</h1>
-                        </div>
-                    </div>
-<!--                    end of row 4 -->
+        <!--            end of card for expense body -->
                 </div>
+<!--                end of col-1 stores of data -->
+<!--                start of input form for expense col 2 -->
+                <div class="col-4">
+                    <div class="info-body card">
+                        <div class="text-center">
+                            <h1 class="card-title text-secondary mt-2"> Add Expense </h1>
+                        </div>
+
+<!--                        start of form -->
+                        <form action="#" method="post">
+                            <div class="m-5">
+                                <label for="totalAmount" class="form-label"><h6>Total Amount</h6></label>
+                                <input type="text" class="form-control" id="totalAmount" value="" placeholder="Total amount (e.g., 100.00)">
+                            </div>
+<!--                            -->
+                            <div class="mx-5">
+                            <label for="exampleDataList" class="form-label">Datalist example</label>
+                            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                            <datalist id="datalistOptions">
+                                <option value= "Utilies">Utilies</option>
+                                <option value="Overhead">Overhead</option>
+                                <option value="Labor">Labor</option>
+                                <option value="Material">Material</option>
+                            </datalist>
+                            </div>
+<!--                            -->
+
+                            <div class="mx-5 my-5">
+                                <label for="date" class="form-label">Datalist example</label>
+                                <input type="text" class="form-control" id="date" value="" placeholder="yyyy-mm-dd">
+                            </div>
+                            <div class="mx-5">
+                                <button type="button" class="btn btn-secondary w-100">Add Expense</button>
+                            </div>
+                        </form>
+<!--                        end of form -->
+                    </div>
+                </div>>
+<!--                end of input form for expense col 2 -->
             </div>
-<!--            end of card for expense body -->
+<!--            end of the row with two column -->
         </div>
     </div>
 </div>
