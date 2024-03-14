@@ -1,20 +1,36 @@
 <?php
+
+/**
+ * This class serves as the controller of the web application.
+ * It will stores the methods to create routing through pages. It will be a communications between views and model.
+ * @author Tien Nguyen, Huy Nguyen , William Castillo
+ */
 class Controller{
     private $_f3;
     private $_database;
 
+    /**
+     * @param $f3 FatFreeFramework object, we use this parameter to pass
+     * the fat free framework to be able to route to pages and uses fat free templating language.
+     */
     public function __construct($f3)
     {
         $this->_database = new AccessDatabase();
         $this->_f3 = $f3;
     }
 
+    /** This method will create a route to a views/home.html directory
+     * @return void
+     */
     function home ()
     {
         $view = new Template();
         echo $view->render('views/home.html');
     }
 
+    /** This method will create a route to a views/login.html directory
+     * @return void
+     */
     function login ()
     {
         // Display a view page
@@ -35,6 +51,9 @@ class Controller{
         echo $view->render('views/login.html');
     }
 
+    /** This method will create a route to a views/overview.html directory
+     * @return void
+     */
     function overview ()
     {
         //database object to get stuff from database
@@ -60,6 +79,9 @@ class Controller{
 
     }
 
+    /** This method will create a route to a views/expense.html directory
+     * @return void
+     */
     function expense ()
     {
         //after the form submits
@@ -116,6 +138,9 @@ class Controller{
 
     }
 
+    /** This method will create a route to a views/revenue.html directory
+     * @return void
+     */
     function revenue()
     {
         //after the form submits
@@ -181,7 +206,9 @@ class Controller{
         echo $view->render('views/revenue.html');
     }
 
-
+    /** This method will create a route to a views/analysis-options.html.html directory
+     * @return void
+     */
     function analysisOptions()
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
