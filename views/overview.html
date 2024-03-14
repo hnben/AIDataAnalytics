@@ -58,7 +58,7 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1 revenue-color"> {{ @SESSION.overview->calcRevenue() }} </h4>
+                                <h4 class="fs-1 revenue-color">{{ @SESSION.overview->calcRevenue()}}</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -76,7 +76,7 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1 expense-color">$1,000,100</h4>
+                                <h4 class="fs-1 expense-color">{{ @SESSION.overview->calcExpenses()}}</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -94,7 +94,7 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1 revenue-color">$1,000,100</h4>
+                                <h4 class="fs-1 revenue-color"> {{ @SESSION.overview->calcNet()}} </h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -116,7 +116,7 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1"> 17 </h4>
+                                <h4 class="fs-1"> {{ @SESSION.overview->getTransactionNumber()}}</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>
@@ -134,7 +134,7 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1">$1,000,100</h4>
+                                <h4 class="fs-1">{{ @SESSION.overview->getAvgTransactionPrice()}}</h4>
                             </div>
                             <!-- end of number display from data -->
                         </div>

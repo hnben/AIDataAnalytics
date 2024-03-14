@@ -60,7 +60,7 @@ class Overview
 
     public function getAvgTransactionPrice()
     {
-        $total = $this->calcNetRevenue();
+        $total = $this->calcRevenue();
 
         //not empty so thus get a total
         if (count($this->_arrayOfRevenue) > 0){
