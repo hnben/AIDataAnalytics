@@ -36,15 +36,11 @@
     background-color: #4c5493;
     color: rgb(209, 209, 209);
 }
-.tien-btn:checked {
-    border: none;
-    background-color: #fdfdfd;
-    color: grey;
-}
+
 .tien-btn:hover {
     border: none;
-    background-color: #fdfdfd;
-    color: grey;
+    background-color: #3c7a8a;
+    color: rgba(250, 250, 250, 0.93);
 }
 .greyColor  {
     border: none;

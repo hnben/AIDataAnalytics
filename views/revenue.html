@@ -96,18 +96,18 @@
                 <div class="col-4">
                     <div class="info-body card">
                         <div class="text-center">
-                            <h1 class="card-title text-secondary mt-2"> Add Transactions </h1>
+                            <h1 class="card-title text-secondary mt-4"> Add Transactions </h1>
                         </div>
 
                         <!--                        start of form -->
                         <form action="#" method="post">
                             <div class="m-5">
-                                <label for="totalAmount" class="form-label"><h6>Total Amount</h6></label>
-                                <input type="text" class="form-control border-secondary" id="totalAmount" value="" placeholder="Total amount (e.g., 100.00)">
+                                <label for="transactionID" class="form-label"><strong>Transaction ID</strong></label>
+                                <input type="text" class="form-control border-secondary" id="transactionID" value="" placeholder="Total amount (e.g., 100.00)">
                             </div>
                             <!--                            -->
-                            <div class="mx-5">
-                                <label for="category" class="form-label">Category</label>
+                            <div class="mx-5 my-2">
+                                <label for="category" class="form-label"><strong>Category</strong></label>
                                 <input class="form-control border-secondary" list="categoryList" id="category" placeholder="Type to search...">
                                 <datalist id="categoryList">
                                     <option value="Appetizer">Appetizer</option>
@@ -117,19 +117,33 @@
                                 </datalist>
                             </div>
                             <!--                            -->
-
-                            <div class="mx-5 my-2">
-                                <label for="itemName" class="form-label">Item Name</label>
+<!--                            start of Item Name -->
+                            <div class="mx-5 my-5">
+                                <label for="itemName" class="form-label"><strong>Item Name</strong></label>
                                 <input class="form-control border-secondary" list="itemList" id="itemName" placeholder="Type to search...">
                                 <datalist id="itemList">
-                                    <option value="Appetizer">Appetizer</option>
-                                    <option value="Entree">Entree</option>
-                                    <option value="Dessert">Dessert</option>
-                                    <option value="Drink">Drink</option>
+                                    <option value="Soda">Soda</option>
+                                    <option value="Lemonade">Fries</option>
+                                    <option value="Mocktail">Garlic Bread</option>
+                                    <option value="Nachos">Nachos</option>
+                                    <option value="Fries">Fries</option>
+                                    <option value="Garlic Bread">Garlic Bread</option>
+                                    <option value="Salad">Salad</option>
+                                    <option value="Taco">Taco</option>
+                                    <option value="Spaghetti">Spaghetti</option>
+                                    <option value="Burger">Burger</option>
+                                    <option value="Pizza">Pizza</option>
+                                    <option value="Chicken Tendies">Chicken Tendies</option>
+                                    <option value="Dumplings">Dumplings</option>
+                                    <option value="Cheesecake">Cheesecake</option>
+                                    <option value="Ice Cream">Ice Cream</option>
+                                    <option value="Cookie">Cookie</option>
                                 </datalist>
                             </div>
-                            <div class="mx-5">
-                                <button type="button" class="btn btn-secondary w-100">Add</button>
+<!--                            end of item Name -->
+<!--                            -->
+                            <div class="mx-5 my-5">
+                                <button type="button" class="btn tien-btn w-100 py-2">Add</button>
                             </div>
                         </form>
                         <!--                        end of form -->
