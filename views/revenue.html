@@ -104,6 +104,9 @@
                             <div class="mx-5 my-2">
                                 <label for="transactionID" class="form-label"><strong>Transaction ID</strong></label>
                                 <input type="text" class="form-control border-secondary" name= "transactionID" id="transactionID" value="" placeholder="Total amount (e.g., 100.00)">
+                                <check if="{{ isset(@errors['transactionID']) }}">
+                                    <span class="text-danger">{{ @errors['transactionID'] }}</span>
+                                </check>
                             </div>
                             <!--                            -->
                             <div class="mx-5 my-2">
@@ -115,6 +118,10 @@
                                     <option value="Dessert">Dessert</option>
                                     <option value="Drink">Drink</option>
                                 </datalist>
+                                <!-- Display an error if there is one -->
+                                <check if="{{ isset(@errors['category']) }}">
+                                    <span class="text-danger">{{ @errors['category'] }}</span>
+                                </check>
                             </div>
                             <!--                            -->
 <!--                            start of Item Name -->
@@ -139,11 +146,17 @@
                                     <option value="Ice Cream">Ice Cream</option>
                                     <option value="Cookie">Cookie</option>
                                 </datalist>
+                                <check if="{{ isset(@errors['itemName']) }}">
+                                    <span class="text-danger">{{ @errors['itemName'] }}</span>
+                                </check>
                             </div>
 <!--                            end of item Name -->
                             <div class="mx-5 my-2">
                                 <label for="quantity" class="form-label"><strong>Quantity</strong></label>
                                 <input type="number" class="form-control border-secondary" name="quantity" id="quantity" value="" placeholder="Total amount (e.g., 100.00)">
+                                <check if="{{ isset(@errors['quantity']) }}">
+                                    <span class="text-danger">{{ @errors['quantity'] }}</span>
+                                </check>
                             </div>
 <!--                            -->
                             <div class="mx-5 mt-5">
@@ -152,7 +165,7 @@
                         </form>
                         <!--                        end of form -->
                     </div>
-                </div>>
+                </div>
                 <!--                end of input form for expense col 2 -->
 
             </div>

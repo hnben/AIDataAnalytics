@@ -57,15 +57,38 @@ class Controller{
     {
         //after the form submits
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $totalAmount = $_POST['totalAmount'];
-            $category = $_POST['category'];
-            $date = $_POST['date'];
+//            adding empty fields
+            $totalAmount = "";
+            $category = "";
+            $date = "";
 
-            //save and insert into the database
-            $expenseObject = new Expenses($category, $date, $totalAmount);
+            //            validate the datas
+            if(Validate::validateNumber($_POST['totalAmount'])) {
+                $totalAmount = $_POST['totalAmount'];
+            }
+            else {
+                $this->_f3->set('errors["totalAmount"]', "Invalid total amount");
+            }
+            if(Validate::validateString($_POST['category'])) {
+                $category = $_POST['category'];
+            }
+            else {
+                $this->_f3->set('errors["category"]', "Invalid category");
+            }
+            if(Validate::validateDate($_POST['date'])) {
+                $date = $_POST['date'];
+            }
+            else {
+                $this->_f3->set('errors["date"]', "Invalid date");
+            }
+//            check to see if there are any errors
+            if(empty($this->_f3->get('errors'))) {
+                //save and insert into the database
+                $expenseObject = new Expenses($category, $date, $totalAmount);
 
-            $database = new AccessDatabase();
-            $database->saveExpense($expenseObject);
+                $database = new AccessDatabase();
+                $database->saveExpense($expenseObject);
+            }
 
         }
 
@@ -90,20 +113,51 @@ class Controller{
     {
         //after the form submits
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $transactionID = $_POST['transactionID'];
-            $category = $_POST['category'];
-            $itemName = $_POST['itemName'];
-            $quantity = $_POST['quantity'];
-            $totalAmount = DataLayer::getItemPrice($itemName, $quantity);
-            $date = date('Y-m-d');
+//            setting empty fields
+            $transactionID = "";
+            $category = "";
+            $itemName =  "";
+            $quantity =  "";
 
-            //create a new order object
-            $orderObject = new Orders($date, $totalAmount, $transactionID, $category,
-            $itemName, $quantity);
+//            validate the datas
+            if(Validate::validateNumber($_POST['transactionID'])) {
+                $transactionID = $_POST['transactionID'];
+            }
+            else {
+                $this->_f3->set('errors["transactionID"]', "Invalid TransactionID");
+            }
+            if(Validate::validateString($_POST['category'])) {
+                $category = $_POST['category'];
+            }
+            else {
+                $this->_f3->set('errors["category"]', "Invalid category");
+            }
+            if(Validate::validateString($_POST['itemName'])) {
+                $itemName = $_POST['itemName'];
+            }
+            else {
+                $this->_f3->set('errors["itemName"]', "Invalid item name");
+            }
+            if(Validate::validateNumber($_POST['quantity'])) {
+                $quantity = $_POST['quantity'];
+            }
+            else {
+                $this->_f3->set('errors["quantity"]', "Invalid quanity");
+            }
 
-            //adds into the database
-            $database = new AccessDatabase();
-            $database->saveOrder($orderObject);
+//            check to see if there are any errors
+            if(empty($this->_f3->get('errors'))) {
+                $totalAmount = DataLayer::getItemPrice($itemName, $quantity);
+                $date = date('Y-m-d');
+
+                //create a new order object
+                $orderObject = new Orders($date, $totalAmount, $transactionID, $category,
+                    $itemName, $quantity);
+
+                //adds into the database
+                $database = new AccessDatabase();
+                $database->saveOrder($orderObject);
+            }
         }
 
         //update the overview object

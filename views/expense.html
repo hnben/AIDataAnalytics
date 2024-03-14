@@ -89,33 +89,48 @@
 
 <!--                        start of form -->
                         <form action="#" method="post">
-                            <div class="m-5">
+                            <div class="mx-5 my-3">
                                 <label for="totalAmount" class="form-label"><strong>Total Amount</strong></label>
                                 <input type="text" class="form-control border-secondary" name= "totalAmount" id="totalAmount" value="" placeholder="Total amount (e.g., 100.00)">
+                                <!-- Display an error if there is one -->
+                                <check if="{{ isset(@errors['totalAmount']) }}">
+                                    <span class="text-danger">{{ @errors['totalAmount'] }}</span>
+                                </check>
                             </div>
+
 <!--                            -->
                             <div class="mx-5">
-                            <label for="exampleDataList" class="form-label"><strong>Category</strong></label>
-                            <input class="form-control border-secondary" list="datalistOptions" name="category" id="exampleDataList" placeholder="Type to search...">
-                            <datalist id="datalistOptions">
-                                <option value="Overhead">Overhead</option>
-                                <option value="Labor">Labor</option>
-                                <option value="Material">Material</option>
-                            </datalist>
+                                <label for="exampleDataList" class="form-label"><strong>Category</strong></label>
+                                <input class="form-control border-secondary" list="datalistOptions" name="category" id="exampleDataList" placeholder="Type to search...">
+                                <datalist id="datalistOptions">
+                                    <option value="Overhead">Overhead</option>
+                                    <option value="Labor">Labor</option>
+                                    <option value="Material">Material</option>
+                                </datalist>
+                                    <!-- Display an error if there is one -->
+                                <check if="{{ isset(@errors['category']) }}">
+                                    <span class="text-danger">{{ @errors['category'] }}</span>
+                                </check>
                             </div>
 <!--                            -->
 
-                            <div class="mx-5 my-5">
+                            <div class="mx-5 my-3">
                                 <label for="date" class="form-label"><strong>Date</strong></label>
                                 <input type="text" class="form-control border-secondary" name="date" id="date" value="" placeholder="yyyy-mm-dd">
+                                <!-- Display an error if there is one -->
+                                <check if="{{ isset(@errors['date']) }}">
+                                    <span class="text-danger">{{ @errors['date'] }}</span>
+                                </check>
                             </div>
+
                             <div class="mx-5">
                                 <button type="submit" class="btn tien-btn w-100 py-2">Add</button>
                             </div>
+
                         </form>
 <!--                        end of form -->
                     </div>
-                </div>>
+                </div>
 <!--                end of input form for expense col 2 -->
             </div>
 <!--            end of the row with two column -->
