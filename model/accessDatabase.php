@@ -3,19 +3,40 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+//connect to database
+//require_once($_SERVER["DOCUMENT_ROOT"]. '/../config.php');
+
 class AccessDatabase
 {
-    static function getAllOrders(){
-        //connect to database
-        require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
+    private $_dbh;
 
+    function __construct()
+    {
         //instantiate PDO database connection object
-        try {
-            $dbh = new PDO(DB_DNS, DB_USERNAME, DB_PASSWORD);
-            // echo 'connected to db!';
-        } catch (PDOException $e) {
-            echo $e->getMessage(); //temporary
+        try
+        {
+            // Instantiate a PDO database connection object
+            $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
+            //            echo 'Connected to database!';
         }
+        catch (PDOException $e)
+        {
+            echo $e->getMessage(); # temporary
+            echo "<p>Oops! Unable to connect.</p>";
+        }
+    }
+
+    static function getAllOrders(){
+//        //connect to database
+//        require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
+//
+//        //instantiate PDO database connection object
+//        try {
+//            $dbh = new PDO(DB_DNS, DB_USERNAME, DB_PASSWORD);
+//            // echo 'connected to db!';
+//        } catch (PDOException $e) {
+//            echo $e->getMessage(); //temporary
+//        }
         //Initialize Variable
         $orderArray = array();
 
@@ -26,7 +47,7 @@ class AccessDatabase
         JOIN `Transaction` ON `Order`.TransactionID = `Transaction`.ID;";
 
         //2. Prepare the statement
-        $statement = $dbh->prepare($sql);
+        $statement = _dbh->prepare($sql);
 
         //3. Bind the parameters
         //$statement->bindParam(':petid', $petId);
@@ -57,9 +78,24 @@ class AccessDatabase
 
     static function getAllTransaction(){
         require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
-
-
-
     }
 
+    function saveOrder($order)
+    {
+        // INSERT Query **********
+        // 1. Define the query
+        $sql = "INSERT INTO Order (TransactionID, CATEGORY, ItemName, Quantity) VALUES (:transactionID, :category, :itemName, :quantity)";
+
+        // 2. Prepare the statement
+        $statement = $this->$dbh->prepare($sql);
+
+        // 3. Bind the parameters
+        $statement->bindValue(':transactionID', $order->getTransactionID());
+        $statement->bindValue(':category', $order->getCategory());
+        $statement->bindValue(':itemNames', $order->getItemName());
+        $statement->bindValue(':quantity', $order->getQuantity());
+
+        // 4. Execute the query
+        $statement->execute();
+    }
 }
