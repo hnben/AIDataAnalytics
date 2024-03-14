@@ -40,4 +40,8 @@ class Orders extends Revenue{
     {
         return $this->_amount;
     }
+    public function getTransactionID()
+    {
+        return $this->_transactionID;
+    }
 }

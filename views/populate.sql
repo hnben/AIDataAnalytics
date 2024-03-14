@@ -35,6 +35,7 @@ CREATE TABLE `Revenue` (
 CREATE TABLE `Transaction` (
    ID INT NOT NULL AUTO_INCREMENT,
    TotalAmount DECIMAL (10,2),
+    OrderSize INT,
    Date DATE,
 
    PRIMARY KEY (ID)

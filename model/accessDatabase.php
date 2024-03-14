@@ -70,12 +70,87 @@ class AccessDatabase
         return $orderArray;
     }
 
-    static function getAllTransaction()
-    {
-        //Initialize Variable
-        $transactionArray = array();
-        $sql = "";
+    private function updateTransaction(){
+        //update transaction table
+        $sql ="
+        UPDATE Transaction AS t
+        SET t.TotalAmount = (
+        SELECT SUM(Quantity * CASE
+        WHEN ItemName = 'Soda' THEN 3.50
+        WHEN ItemName = 'Lemonade' THEN 6.00
+        WHEN ItemName = 'Mocktail' THEN 11.00
+        WHEN ItemName = 'Alcohol' THEN 16.00
+        WHEN ItemName = 'Nachos' THEN 8.50
+        WHEN ItemName = 'Fries' THEN 4.50
+        WHEN ItemName = 'Garlic Bread' THEN 9.00
+        WHEN ItemName = 'Salad' THEN 11.00
+        WHEN ItemName = 'Taco' THEN 2.50
+        WHEN ItemName = 'Spaghetti' THEN 17.00
+        WHEN ItemName = 'Burger' THEN 14.00
+        WHEN ItemName = 'Pizza' THEN 21.00
+        WHEN ItemName = 'Chicken Tendies' THEN 12.00
+        WHEN ItemName = 'Dumplings' THEN 8.00
+        WHEN ItemName = 'Cheesecake' THEN 6.00
+        WHEN ItemName = 'Ice Cream' THEN 4.50
+        WHEN ItemName = 'Cookie' THEN 2.50
+        END) AS TotalCost
+        FROM `Order`
+        WHERE TransactionID = t.ID
+        GROUP BY TransactionID
+);        ";
 
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+
+        //update the orderSize of the Transaction table
+        $sql = "
+        UPDATE `Transaction` AS t
+        JOIN (
+        SELECT `TransactionID`, SUM(`Quantity`) AS TotalQuantity
+        FROM `Order`
+        GROUP BY `TransactionID`
+        ) AS o ON t.ID = o.TransactionID
+        SET t.OrderSize = o.TotalQuantity
+        ";
+        $statement = $this->_dbh->prepare($sql);
+        $statement->execute();
+    }
+
+    function getAllTransaction()
+    {
+        //update Transaction Table
+        $this->updateTransaction();
+
+        //getting stuff from the transaction table
+
+        $transactionArray = array();
+
+        //set up sql query
+        $sql = "SELECT * FROM `Transaction` GROUP BY ID";
+
+        //prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //execute the query
+        $statement->execute();
+
+        //do stuff with the results
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($statement->rowCount() == 0) {
+            echo "<p> No match found</p>";
+        }
+        else{
+            foreach ($results as $result){
+                $totalAmount = $result['TotalAmount'];
+                $date = $result['Date'];
+                $orderSize = $result['OrderSize'];
+
+                $transactionObject = new Transaction($date, $totalAmount, $orderSize );
+                $transactionArray[] = $transactionObject;
+            }
+        }
+        return $transactionArray;
     }
 
     function saveOrder($order) : void
