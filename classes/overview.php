@@ -17,19 +17,37 @@ class Overview
     //     CLASS SPECIFIC METHODS
     //********************************
 
-    public function calcNet($lastNumberOfDays)
+    public function calcNet()
     {
-        return 1.0;
+        return $this->calcNetRevenue() - $this->calcExpenses();
     }
 
-    public function calcExpenses($lastNumberOfDays)
+    public function calcExpenses()
     {
-        return 1.0;
+        $total = 0;
+        //checks if the array is empty
+        if (!empty($this->_arrayOfExpenses)){
+            foreach ($this->_arrayOfExpenses as $expense){
+                $total += $expense->getTotalAmount();
+            }
+        }else{
+            return 0;
+        }
+        return $total;
     }
 
-    public function calcNetRevenue($lastNumberOfDays)
+    public function calcNetRevenue()
     {
-        return 1.0;
+        $total = 0;
+        //checks if the array is empty
+        if (!empty($this->_arrayOfRevenue)){
+            foreach ($this->_arrayOfRevenue as $revenue){
+                $total += $revenue->getTotalAmount();
+            }
+        }else{
+            return 0;
+        }
+        return $total;
     }
 
     //*****************

@@ -40,8 +40,10 @@ class Controller{
         //database object to get stuff from database
         $database = new AccessDatabase();
         $revenueArray = $database->getAllTransaction();
+        $expenseArray = $database->getAllExpense();
 
-
+        $overviewObject = new Overview($expenseArray, $revenueArray, 10);
+        $this->_f3->set('SESSION.overview', $overviewObject);
 
         // Display a view page
         $view = new Template();

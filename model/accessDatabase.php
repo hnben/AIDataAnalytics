@@ -117,7 +117,7 @@ class AccessDatabase
         $statement->execute();
     }
 
-    function getAllTransaction()
+    function getAllTransaction(): array
     {
         //update Transaction Table
         $this->updateTransaction();
@@ -154,7 +154,8 @@ class AccessDatabase
         return $transactionArray;
     }
 
-    function getAllExpense(){
+    function getAllExpense(): array
+    {
         $expenseArray = array();
 
         //set up sql query
