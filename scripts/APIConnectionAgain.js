@@ -1,4 +1,4 @@
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = '';
 
 async function chatWithOpenAI() {
 

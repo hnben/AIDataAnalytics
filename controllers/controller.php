@@ -55,6 +55,20 @@ class Controller{
 
     function expense ()
     {
+        //after the form submits
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $totalAmount = $_POST['totalAmount'];
+            $category = $_POST['category'];
+            $date = $_POST['date'];
+
+            //save and insert into the database
+            $expenseObject = new Expenses($category, $date, $totalAmount);
+
+            $database = new AccessDatabase();
+            $database->saveExpense($expenseObject);
+
+        }
+
         //update the overview object
         $revenueArray = $this->_database->getAllTransaction();
         $expenseArray = $this->_database->getAllExpense();
@@ -65,9 +79,11 @@ class Controller{
         //set fat free object of the overview page
         $this->_f3->set('SESSION.expense', $expenseObject);
 
-//       display the page
+        // display the page
         $view = new Template();
         echo $view->render('views/expense.html');
+
+
     }
 
     function revenue()

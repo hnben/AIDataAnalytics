@@ -204,4 +204,21 @@ class AccessDatabase
         // 4. Execute the query
         $statement->execute();
     }
+
+        function saveExpense($expense){
+
+        //1. Define the query
+        $sql = "INSERT INTO `Expense`( `TotalAmount`, `Type`, `Date`) VALUES (:totalAmount,:type,:date)";
+
+        //2. prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. bind the parameters
+        $statement->bindValue(':totalAmount', $expense->getTotalAmount());
+        $statement->bindValue(':type', $expense->getType());
+        $statement->bindValue(':date', $expense->getDate());
+
+        // 4. Execute the query
+        $statement->execute();
+    }
 }
