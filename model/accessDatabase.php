@@ -190,7 +190,7 @@ class AccessDatabase
     {
         // INSERT Query **********
         // 1. Define the query
-        $sql = "INSERT INTO Order (TransactionID, CATEGORY, ItemName, Quantity) VALUES (:transactionID, :category, :itemName, :quantity)";
+        $sql = "INSERT INTO `Order` (TransactionID, CATEGORY, ItemName, Quantity) VALUES (:transactionID, :category, :itemName, :quantity)";
 
         // 2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -198,7 +198,7 @@ class AccessDatabase
         // 3. Bind the parameters
         $statement->bindValue(':transactionID', $order->getTransactionID());
         $statement->bindValue(':category', $order->getCategory());
-        $statement->bindValue(':itemNames', $order->getItemName());
+        $statement->bindValue(':itemName', $order->getItems());
         $statement->bindValue(':quantity', $order->getQuantity());
 
         // 4. Execute the query

@@ -88,6 +88,24 @@ class Controller{
 
     function revenue()
     {
+        //after the form submits
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $transactionID = $_POST['transactionID'];
+            $category = $_POST['category'];
+            $itemName = $_POST['itemName'];
+            $quantity = $_POST['quantity'];
+            $totalAmount = DataLayer::getItemPrice($itemName, $quantity);
+            $date = date('Y-m-d');
+
+            //create a new order object
+            $orderObject = new Orders($date, $totalAmount, $transactionID, $category,
+            $itemName, $quantity);
+
+            //adds into the database
+            $database = new AccessDatabase();
+            $database->saveOrder($orderObject);
+        }
+
         //update the overview object
         $revenueArray = $this->_database->getAllTransaction();
         $expenseArray = $this->_database->getAllExpense();
@@ -115,7 +133,7 @@ class Controller{
         $view = new Template();
         echo $view->render('views/testTrends.html');
     }
-
+/*
     function form()
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -135,7 +153,7 @@ class Controller{
         $view = new Template();
         echo $view->render('views/newForm.html');
     }
-
+*/
     function analysisOptions()
     {
         $view = new Template();

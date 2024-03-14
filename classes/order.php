@@ -47,4 +47,7 @@ class Orders extends Revenue{
     public function getCategory(){
         return $this->_category;
     }
+    public function getQuantity(){
+        return $this->_amount;
+    }
 }
