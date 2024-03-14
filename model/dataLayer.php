@@ -49,7 +49,7 @@ class DataLayer {
         }
     }
 
-    function getGPTPrompt($startDate, $endDate, $type){
+    static function getGPTPrompt($startDate, $endDate, $type){
         $prompt = "can you give me a " . $type ." analysis of the this lot of data and potentially anything unique you find about the data: ";
         $count = 1;
         $database = new AccessDatabase();

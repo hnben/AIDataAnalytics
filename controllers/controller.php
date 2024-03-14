@@ -222,8 +222,10 @@ class Controller{
             $endDate = $_POST['endDate'];
             $analysisOption = $_POST['trend'];
 
+            $prompt = DataLayer::getGPTPrompt($startDate, $endDate, $analysisOption);
+            $response = gptData::getGPTResponse($prompt);
 
-
+            $this->_f3->set('bruh', $response);
         }
 
         $view = new Template();

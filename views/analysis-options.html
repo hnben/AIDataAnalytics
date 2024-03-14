@@ -42,16 +42,16 @@ expenses, net gain, orders, and average order price.
 <!--        whole container -->
         <div class="container">
 <!--            start of form -->
-            <form action="#">
+            <form action="#" method="post">
 <!--                start of row 1 -->
                 <div class="row py-4">
 <!--                    this is the date chooser -->
                     <div class="btn-group pe-4" role="group" aria-label="Basic example">
                         <div class="input-group">
-                            <input type="text" class="form-control p-3" name="startDate" placeholder="Start Date: mm/dd/yyyy">
+                            <input type="text" class="form-control p-3" name="startDate" placeholder="Start Date: yyyy/mm/dd">
                         </div>
                         <div class="input-group ps-4">
-                            <input type="text" class="form-control p-3" name="endDate"  placeholder="End Date: mm/dd/yyyy">
+                            <input type="text" class="form-control p-3" name="endDate"  placeholder="End Date: yyyy/mm/dd">
                         </div>
                     </div>
 <!--                    end of date choosers -->
@@ -101,7 +101,7 @@ expenses, net gain, orders, and average order price.
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" id="response">
-                            Your restaurant is dying, please fix it.
+                            {{ @bruh }}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
