@@ -19,7 +19,10 @@ class Overview
 
     public function calcNet()
     {
-        return $this->calcNetRevenue() - $this->calcExpenses();
+        $revenueTotal = $this->calcRevenue();
+        $expenseTotal = $this->calcExpenses();
+        $net = $revenueTotal - $expenseTotal;
+        return number_format($net, 2);
     }
 
     public function calcExpenses()
