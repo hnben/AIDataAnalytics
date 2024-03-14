@@ -16,6 +16,7 @@ class AccessDatabase
         try
         {
             // Instantiate a PDO database connection object
+            require_once($_SERVER["DOCUMENT_ROOT"]. '/../config.php');
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
             //            echo 'Connected to database!';
         }
@@ -26,17 +27,8 @@ class AccessDatabase
         }
     }
 
-    static function getAllOrders(){
-//        //connect to database
-//        require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
-//
-//        //instantiate PDO database connection object
-//        try {
-//            $dbh = new PDO(DB_DNS, DB_USERNAME, DB_PASSWORD);
-//            // echo 'connected to db!';
-//        } catch (PDOException $e) {
-//            echo $e->getMessage(); //temporary
-//        }
+    function getAllOrders() :array
+    {
         //Initialize Variable
         $orderArray = array();
 
@@ -47,10 +39,10 @@ class AccessDatabase
         JOIN `Transaction` ON `Order`.TransactionID = `Transaction`.ID;";
 
         //2. Prepare the statement
-        $statement = _dbh->prepare($sql);
+        $statement = $this->_dbh->prepare($sql);
 
         //3. Bind the parameters
-        //$statement->bindParam(':petid', $petId);
+        //$statement->bindParam();
 
         //4. Execute the query
         $statement->execute();
@@ -68,26 +60,32 @@ class AccessDatabase
                 $item = $result['ItemName'];
                 $quantity = $result['Quantity'];
                 $date = $result['Date'];
+                $transactionID = $result['TransactionID'];
 
-                $orderObject = new Orders($category, $date, DataLayer::getItemPrice($item, $quantity), $item, $quantity);
+                $orderObject = new Orders($date, DataLayer::getItemPrice($item, $quantity)
+                    ,$transactionID, $category, $item, $quantity);
                 $orderArray[] = $orderObject;
             }
         }
         return $orderArray;
     }
 
-    static function getAllTransaction(){
-        require_once($_SERVER["DOCUMENT_ROOT"] . '/../config.php');
+    static function getAllTransaction()
+    {
+        //Initialize Variable
+        $transactionArray = array();
+        $sql = "";
+
     }
 
-    function saveOrder($order)
+    function saveOrder($order) : void
     {
         // INSERT Query **********
         // 1. Define the query
         $sql = "INSERT INTO Order (TransactionID, CATEGORY, ItemName, Quantity) VALUES (:transactionID, :category, :itemName, :quantity)";
 
         // 2. Prepare the statement
-        $statement = $this->$dbh->prepare($sql);
+        $statement = $this->_dbh->prepare($sql);
 
         // 3. Bind the parameters
         $statement->bindValue(':transactionID', $order->getTransactionID());
@@ -98,4 +96,6 @@ class AccessDatabase
         // 4. Execute the query
         $statement->execute();
     }
+
+
 }

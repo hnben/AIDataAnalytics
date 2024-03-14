@@ -4,9 +4,9 @@ class Transaction extends Revenue
 {
     private $_orderSize; // String
 
-    public function __construct($type, $date, $totalAmount, $orderSize)
+    public function __construct( $date, $totalAmount, $orderSize)
     {
-        parent::__construct($type, $date, $totalAmount);
+        parent::__construct($date, $totalAmount);
         $this->_orderSize = $orderSize;
     }
 
