@@ -156,6 +156,15 @@ class Controller{
 */
     function analysisOptions()
     {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $startDate = $_POST['startDate'];
+            $endDate = $_POST['endDate'];
+            $analysisOption = $_POST['trend'];
+
+
+
+        }
+
         $view = new Template();
         echo $view->render('views/analysis-options.html');
     }

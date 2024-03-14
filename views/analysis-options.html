@@ -48,10 +48,10 @@ expenses, net gain, orders, and average order price.
 <!--                    this is the date chooser -->
                     <div class="btn-group pe-4" role="group" aria-label="Basic example">
                         <div class="input-group">
-                            <input type="text" class="form-control p-3" placeholder="Start Date: mm/dd/yyyy">
+                            <input type="text" class="form-control p-3" name="startDate" placeholder="Start Date: mm/dd/yyyy">
                         </div>
                         <div class="input-group ps-4">
-                            <input type="text" class="form-control p-3" placeholder="End Date: mm/dd/yyyy">
+                            <input type="text" class="form-control p-3" name="endDate"  placeholder="End Date: mm/dd/yyyy">
                         </div>
                     </div>
 <!--                    end of date choosers -->
@@ -61,11 +61,11 @@ expenses, net gain, orders, and average order price.
                 <div class="row pt-5">
                     <!-- start of the card  -->
                     <div class = "col-md-6">
-                        <input type="radio" class="btn-check" name="trend" id="trend" autocomplete="off" >
+                        <input type="radio" class="btn-check" name="trend" value="Trend" id="trend" autocomplete="off" >
                         <label class="btn w-100 text-center d-flex align-items-center justify-content-center btn-secondary fs-1" for="trend" style="height: 250px">Trend</label>
                     </div>
                     <div class="col-md-6">
-                        <input type="radio" class="btn-check" name="trend" id="summary" autocomplete="off" >
+                        <input type="radio" class="btn-check" name="trend" value="Summary" id="summary" autocomplete="off" >
                         <label class="btn w-100 text-center d-flex align-items-center justify-content-center btn-secondary fs-1" for="summary" style="height: 250px">Summary</label>
                     </div>
                     <!-- end of card  -->
