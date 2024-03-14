@@ -2,13 +2,13 @@
 
 class Revenue
 {
-    private $_type;
+//    private $_type;
     private $_date;
     private $_totalAmount;
 
-    public function __construct($type, $date, $totalAmount)
+    public function __construct($date, $totalAmount)
     {
-        $this->_type = $type;
+//        $this->_type = $type;
         $this->_date = $date;
         $this->_totalAmount = $totalAmount;
     }
