@@ -101,7 +101,7 @@
 
                         <!--                        start of form -->
                         <form action="#" method="post">
-                            <div class="m-5">
+                            <div class="mx-5 my-2">
                                 <label for="transactionID" class="form-label"><strong>Transaction ID</strong></label>
                                 <input type="text" class="form-control border-secondary" id="transactionID" value="" placeholder="Total amount (e.g., 100.00)">
                             </div>
@@ -118,7 +118,7 @@
                             </div>
                             <!--                            -->
 <!--                            start of Item Name -->
-                            <div class="mx-5 my-5">
+                            <div class="mx-5 my-2">
                                 <label for="itemName" class="form-label"><strong>Item Name</strong></label>
                                 <input class="form-control border-secondary" list="itemList" id="itemName" placeholder="Type to search...">
                                 <datalist id="itemList">
@@ -141,9 +141,13 @@
                                 </datalist>
                             </div>
 <!--                            end of item Name -->
+                            <div class="mx-5 my-2">
+                                <label for="quantity" class="form-label"><strong>Quantity</strong></label>
+                                <input type="number" class="form-control border-secondary" id="quantity" value="" placeholder="Total amount (e.g., 100.00)">
+                            </div>
 <!--                            -->
-                            <div class="mx-5 my-5">
-                                <button type="button" class="btn tien-btn w-100 py-2">Add</button>
+                            <div class="mx-5 mt-5">
+                                <button type="submit" class="btn tien-btn w-100 py-2">Add</button>
                             </div>
                         </form>
                         <!--                        end of form -->
