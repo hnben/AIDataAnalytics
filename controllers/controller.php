@@ -181,40 +181,7 @@ class Controller{
         echo $view->render('views/revenue.html');
     }
 
-    function sales()
-    {
-//        currently not using
-        $view = new Template();
-        echo $view->render('views/sales.html');
-    }
 
-    function trends()
-    {
-
-        $view = new Template();
-        echo $view->render('views/testTrends.html');
-    }
-/*
-    function form()
-    {
-        if($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
-            $transactionId = $_POST['transactionID'];
-            $category = $_POST['category'];
-            $itemName = $_POST['itemName'];
-            $quantity = $_POST['quantity'];
-            $totalAmount = DataLayer::getItemPrice($itemName, $quantity);
-            $date = date("Y-m-d");
-
-            $order = new Orders($date, $totalAmount, $transactionId, $category,
-                $itemName, $quantity);
-
-            $this->_f3->set('order', $order);
-        }
-        $view = new Template();
-        echo $view->render('views/newForm.html');
-    }
-*/
     function analysisOptions()
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -52,25 +52,6 @@ $f3->route('GET|POST /revenue', function() {
     $GLOBALS['controller']->revenue();
 });
 
-// Routing to the Sales Page
-$f3->route('GET|POST /sales', function() {
-    // Display a view page
-    $GLOBALS['controller']->sales();
-});
-
-// Routing to the Trends Page
-$f3->route('GET|POST /trends', function() {
-    // Display a view page
-    // Display a view page
-    $GLOBALS['controller']->trends();
-});
-
-// Routing to the Trends Page
-$f3->route('GET|POST /form', function() {
-    // Display a view page
-    $GLOBALS['controller']->form();
-});
-
 // Routing to the analysis options Page
 $f3->route('GET|POST /analysisoptions', function() {
     // Display a view page
