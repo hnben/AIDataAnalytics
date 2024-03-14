@@ -44,6 +44,13 @@ class Controller{
         //set into the overview object
         $overviewObject = new Overview($expenseArray, $revenueArray, 10);
 
+        if ($overviewObject->calcNet() < 0 )
+        {
+            $this->_f3->set('negativeBalance', true);
+        }
+        else{
+            $this->_f3->set('negativeBalance', false);
+        }
         //set fat free object of the overview page
         $this->_f3->set('SESSION.overview', $overviewObject);
 

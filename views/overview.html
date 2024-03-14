@@ -94,7 +94,14 @@ expenses, net gain, orders, and average order price.
 
                             <!-- displays the number get from data  -->
                             <div class="info">
-                                <h4 class="fs-1 revenue-color"> {{ @SESSION.overview->calcNet()}} </h4>
+                                <check if="{{ @negativeBalance }}">
+                                    <true>
+                                        <h4 class="fs-1 expense-color"> {{ @SESSION.overview->calcNet()}} </h4>
+                                    </true>
+                                    <false>
+                                        <h4 class="fs-1 revenue-color"> {{ @SESSION.overview->calcNet()}} </h4>
+                                    </false>
+                                </check>
                             </div>
                             <!-- end of number display from data -->
                         </div>
