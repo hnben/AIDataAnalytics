@@ -54,6 +54,6 @@ Password: pass
 ![AI Data Analytics UML Class Diagram](https://github.com/hnben/AIDataAnalytics/assets/135763064/292f0ad6-814c-4df3-8c7f-875faf6861c5)
 
 # ER Database Diagram
-<img width="1154" alt="AI Data Analytics ER Database Diagram" src="https://github.com/hnben/AIDataAnalytics/assets/135763064/78822be0-a46c-48d3-ade8-cdac8e56f18b">
+<img width="1154" alt="AI Data Analytics ER Database Diagram" src="[https://github.com/hnben/AIDataAnalytics/assets/135763064/78822be0-a46c-48d3-ade8-cdac8e56f18b](https://i.imgur.com/LFaFo4d.png)https://i.imgur.com/LFaFo4d.png">
 
 
