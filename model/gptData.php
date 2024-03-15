@@ -1,7 +1,20 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+/**
+ * The gptData class connects the API to the server.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
+ */
 class gptData{
+
+    /**
+     * Sets up the API to enter the chatGPT prompt and receives
+     * the message to display on the analysis options page.
+     * @param string $message generated prompt
+     * @return mixed|string response
+     */
     static function getGPTResponse($message){
         $response = "failed response";
 
