@@ -3,13 +3,21 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//connect to database
-//require_once($_SERVER["DOCUMENT_ROOT"]. '/../config.php');
+/**
+ * The AccessDatabase class creates the connection between the
+ * SQL Database and server.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
+ */
 
 class AccessDatabase
 {
     private $_dbh;
 
+    /**
+     * Constructor that creates an AccessDatabase object and
+     * instantiates the PDO Database connection.
+     */
     function __construct()
     {
         //instantiate PDO database connection object
@@ -19,15 +27,19 @@ class AccessDatabase
             //connect to database
             require_once ($_SERVER["DOCUMENT_ROOT"].'/../config.php');
             $this->_dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-            //            echo 'Connected to database!';
         }
         catch (PDOException $e)
         {
-            echo $e->getMessage(); # temporaryyeah
+            echo $e->getMessage();
             echo "<p>Oops! Unable to connect.</p>";
         }
     }
 
+    /**
+     * A select query that retrieves all orders from the Order table.
+     * Adds all orders to an array
+     * @return array array of orders
+     */
     function getAllOrders() :array
     {
         //Initialize Variable
@@ -71,6 +83,11 @@ class AccessDatabase
         return $orderArray;
     }
 
+    /**
+     * An update query that updates the total amount in the transaction table
+     * based on the TransactionID in the database.
+     * @return void
+     */
     private function updateTransaction(){
         //update transaction table
         $sql ="
@@ -117,6 +134,10 @@ class AccessDatabase
         $statement->execute();
     }
 
+    /**
+     * A select query that gets all transactions.
+     * @return array array of transactions
+     */
     function getAllTransaction(): array
     {
         //update Transaction Table
@@ -154,6 +175,10 @@ class AccessDatabase
         return $transactionArray;
     }
 
+    /**
+     * A select query that retrieves all expenses
+     * @return array expense array
+     */
     function getAllExpense(): array
     {
         $expenseArray = array();
@@ -186,6 +211,12 @@ class AccessDatabase
         return $expenseArray;
     }
 
+    /**
+     * An insert query that adds an order from the form to the Order table
+     * in the database
+     * @param $order
+     * @return void
+     */
     function saveOrder($order) : void
     {
         // INSERT Query **********
@@ -205,6 +236,11 @@ class AccessDatabase
         $statement->execute();
     }
 
+    /**
+     * An insert query that adds an expense into the Expense table in the database.
+     * @param $expense
+     * @return void
+     */
         function saveExpense($expense){
 
         //1. Define the query
