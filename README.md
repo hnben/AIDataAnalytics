@@ -16,10 +16,10 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 - API JavaScripts are under scripts folder
 
 **2. Routes all URLs and leverages a templating language using the Fat-Free framework.**
-- All routes are in the index.php and uses the Fat-Free Framework
+- All routes are in the index.php and uses the Fat-Free Framework.
 
 **3. Has a clearly defined database layer using PDO and prepared statements.**
-- Connection to the database and prepared statements are created within the accessDatabase.php, under the model folder
+- Connection to the database and prepared statements are created within the accessDatabase.php, under the model folder.
 
 **4. Data can be added and viewed.**
 - The user is able to add expenses and orders, which are then populated into the database. This is displayed on the overview page.
@@ -28,8 +28,8 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 - All team members have a history of commits with detailed comments.
 
 **6. Uses OOP, and utilizes multiple classes, including at least one inheritance relationship.**
-- Classes: Overview, Revenue, Order, Transaction, Overhead, Expenses, EmployeeExpenses, Material Expenses.
-- MaterialExpenses and EmployeeExpenses inherits Expenses class and its fields: type, date, and total amount.
+- Classes: Overview, Revenue, Order, Transaction, Expenses.
+- Transaction and Order inherits from the Revenue class and its fields: date and totalAmount.
 
 **7. Contains full Docblocks for all PHP files and follows PEAR standards.**
 - All PHP files contains DocBlocks and follows PEAR Standards.
