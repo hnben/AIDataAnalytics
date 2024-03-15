@@ -11,9 +11,8 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 - All HTML files under views folder
 - Routes of all HTML files is under index.php
 - Classes are within classes folder
-- Controller receives data from the views and saves into F3 Hive
+- Controller receives data from our classes and saves objects or data into F3 Hive
 - Access to the database and data validation classes are under model
-- API JavaScripts are under scripts folder
 
 **2. Routes all URLs and leverages a templating language using the Fat-Free framework.**
 - All routes are in the index.php and uses the Fat-Free Framework.
@@ -22,7 +21,7 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 - Connection to the database and prepared statements are created within the accessDatabase.php, under the model folder.
 
 **4. Data can be added and viewed.**
-- The user is able to add expenses and orders, which are then populated into the database. This is displayed on the overview page.
+- The user is able to add expenses and orders, which are then populated into the database. This is displayed on the overview.html page and a breakdown of the numbers are in revenue.html and expense.html.
 
 **5. Has a history of commits from both team members to a Git repository. Commits are clearly commented.**
 - All team members have a history of commits with detailed comments.
@@ -35,7 +34,7 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 - All PHP files contains DocBlocks and follows PEAR Standards.
 
 **8. Has full validation on the server side through PHP.**
-- The dataLayer PHP class contains full validation.
+- The validate.php features static functions to validate forms.
 
 **9. All code is clean, clear, and well-commented. DRY (Don't Repeat Yourself) is practiced.**
 - All files are well-commented. Functions are used to organize code that repeats an operation.
@@ -45,6 +44,7 @@ A data analysis tool for restaurants enhanced with AI to get insights on growth 
 
 **BONUS:  Incorporates Ajax that access data from a JSON file, PHP script, or API. If you implement Ajax, be sure to include how you did so in your readme file.**
 - Ajax was not used in this project.
+- cURL was used to make API calls to openAI's API, using their API endpoint for text-generation. A function to receive the chatGPT resposne is in gptData.php under model directory.
 
 # Admin Login
 Username: user
