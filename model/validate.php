@@ -1,10 +1,11 @@
 <?php
     /**
-     *This class will validate the data that is collected through the
+     * This class will validate the data that is collected through the
      * form that the user put in.
+     *
+     * @author Huy Nguyen, Tien Nguyen, Will Castillo
      */
     class Validate {
-
         /**
          * @param $string String this will let user input a string into the method
          * @return bool this will return a boolean base on the string, if it is a value string, it will
