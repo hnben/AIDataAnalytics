@@ -2,8 +2,10 @@
 
 /**
  * This class serves as the controller of the web application.
- * It will stores the methods to create routing through pages. It will be a communications between views and model.
- * @author Tien Nguyen, Huy Nguyen , William Castillo
+ * It will store the methods to create routing through pages.
+ * Allows for communication between views and model.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
  */
 class Controller{
     private $_f3;
@@ -28,7 +30,9 @@ class Controller{
         echo $view->render('views/home.html');
     }
 
-    /** This method will create a route to a views/login.html directory
+    /**
+     * This method will create a route to a views/login.html directory.
+     * Validates the username and password to proceed to overview page
      * @return void
      */
     function login ()
@@ -51,7 +55,9 @@ class Controller{
         echo $view->render('views/login.html');
     }
 
-    /** This method will create a route to a views/overview.html directory
+    /**
+     * This method will create a route to a views/overview.html directory.
+     * Creates an Overview object and saves it into a session.
      * @return void
      */
     function overview ()
@@ -79,19 +85,21 @@ class Controller{
 
     }
 
-    /** This method will create a route to a views/expense.html directory
+    /**
+     * This method will create a route to a views/expense.html directory.
+     * Validates the data and updates the Overview object.
+     *
      * @return void
      */
     function expense ()
     {
         //after the form submits
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//            adding empty fields
             $totalAmount = "";
             $category = "";
             $date = "";
 
-            //            validate the datas
+            // validates the data
             if(Validate::validateNumber($_POST['totalAmount'])) {
                 $totalAmount = $_POST['totalAmount'];
             }
@@ -110,7 +118,7 @@ class Controller{
             else {
                 $this->_f3->set('errors["date"]', "Invalid date");
             }
-//            check to see if there are any errors
+            // checks to see if there are any errors
             if(empty($this->_f3->get('errors'))) {
                 //save and insert into the database
                 $expenseObject = new Expenses($category, $date, $totalAmount);
@@ -138,7 +146,11 @@ class Controller{
 
     }
 
-    /** This method will create a route to a views/revenue.html directory
+    /**
+     * This method will create a route to a views/revenue.html directory.
+     * The page contains a form, which is validated and added into the
+     * Overview object
+     *
      * @return void
      */
     function revenue()
@@ -151,7 +163,7 @@ class Controller{
             $itemName =  "";
             $quantity =  "";
 
-//            validate the datas
+//            validates the data
             if(Validate::validateNumber($_POST['transactionID'])) {
                 $transactionID = $_POST['transactionID'];
             }
@@ -177,7 +189,7 @@ class Controller{
                 $this->_f3->set('errors["quantity"]', "Invalid quanity");
             }
 
-//            check to see if there are any errors
+//            checks to see if there are any errors
             if(empty($this->_f3->get('errors'))) {
                 $totalAmount = DataLayer::getItemPrice($itemName, $quantity);
                 $date = date('Y-m-d');
@@ -206,7 +218,10 @@ class Controller{
         echo $view->render('views/revenue.html');
     }
 
-    /** This method will create a route to a views/analysis-options.html.html directory
+    /**
+     * This method will create a route to a views/analysis-options.html.html directory.
+     * Contains the options for trends, generates GPT response, and displays on page.
+     *
      * @return void
      */
     function analysisOptions()
