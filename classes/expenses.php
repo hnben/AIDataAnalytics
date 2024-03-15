@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @author Tien Nguyen, Huy Nguyen, William Castillo
  * This class will serve as the expense for business.
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
  */
 class Expenses
 {
