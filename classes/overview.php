@@ -1,11 +1,24 @@
 <?php
 
+/**
+ * The Overview class contains information that calculates
+ * the data and returns the information to display on the
+ * Overview page.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
+ */
 class Overview
 {
     private $_arrayOfExpenses;
     private $_arrayOfRevenue;
     private $_taxRate;
 
+    /**
+     * Constructor instantiates an Overview object
+     * @param int $arrayOfExpenses all expenses numbers
+     * @param int $arrayOfRevenue all revenue numbers
+     * @param float $taxRate tax rate
+     */
     public function __construct($arrayOfExpenses, $arrayOfRevenue, $taxRate)
     {
         $this->_arrayOfExpenses = $arrayOfExpenses;
@@ -17,6 +30,10 @@ class Overview
     //     CLASS SPECIFIC METHODS
     //********************************
 
+    /**
+     * Calculates the Net Total to display on page
+     * @return string net total
+     */
     public function calcNet()
     {
         $revenueTotal = $this->calcRevenue();
@@ -25,6 +42,10 @@ class Overview
         return number_format($net, 2);
     }
 
+    /**
+     * Calculates the Expenses to display on page
+     * @return int expenses total
+     */
     public function calcExpenses()
     {
         $total = 0;
@@ -39,6 +60,10 @@ class Overview
         return $total;
     }
 
+    /**
+     * Calculates the Revenue to display on page
+     * @return int|string total formatted with 2 decimal places
+     */
     public function calcRevenue()
     {
         $total = 0;
@@ -54,11 +79,19 @@ class Overview
         return sprintf('%.2f', $total);
     }
 
+    /**
+     * Get transaction count
+     * @return int number of transactions
+     */
     public function getTransactionNumber()
     {
         return count($this->_arrayOfRevenue);
     }
 
+    /**
+     * Calculate the average transaction price
+     * @return int|string total amount with 2 decimals
+     */
     public function getAvgTransactionPrice()
     {
         $total = $this->calcRevenue();
@@ -73,6 +106,11 @@ class Overview
         }
     }
 
+    /**
+     * Calculates totals for all order types
+     * @param string $type drink, appetizer, dessert, entree
+     * @return int|string total amount
+     */
     function getRevenueBreakdown($type){
         $database = new AccessDatabase();
         $orderArray = $database->getAllOrders();
@@ -117,6 +155,11 @@ class Overview
         return -1;
     }
 
+    /**
+     * Calculates totals for all expenses
+     * @param string $type overhead, labor, and material
+     * @return int|string total amount
+     */
     function getExpenseBreakdown($type){
         $overheadTotal = 0;
         $laborTotal = 0;
@@ -152,16 +195,32 @@ class Overview
     //*****************
     //     SETTERS
     //*****************
+
+    /**
+     * Sets the array of expenses
+     * @param float $arrayOfExpenses all expenses
+     * @return void
+     */
     public function setArrayOfExpenses($arrayOfExpenses)
     {
         $this->_arrayOfExpenses = $arrayOfExpenses;
     }
 
+    /**
+     * Sets the array of revenue
+     * @param float $arrayOfRevenue all revenue
+     * @return void
+     */
     public function setArrayOfRevenue($arrayOfRevenue)
     {
         $this->_arrayOfRevenue = $arrayOfRevenue;
     }
 
+    /**
+     * Sets the tax rate
+     * @param float $taxRate tax rate
+     * @return void
+     */
     public function setTaxRate($taxRate)
     {
         $this->_taxRate = $taxRate;
@@ -170,14 +229,29 @@ class Overview
     //*****************
     //     GETTERS
     //*****************
+
+    /**
+     * Gets the array of expenses
+     * @return int array of expenses
+     */
     public function getArrayOfExpenses()
     {
         return $this->_arrayOfExpenses;
     }
+
+    /**
+     * Gets the array of revenue
+     * @return int array of revenue
+     */
     public function getArrayOfRevenue()
     {
         return $this->_arrayOfRevenue;
     }
+
+    /**
+     * Gets the tax rate
+     * @return float tax rate
+     */
     public function getTaxRate()
     {
         return $this->_taxRate;
