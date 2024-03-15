@@ -1,5 +1,19 @@
 <?php
+
+/**
+ * The DataLayer class returns calculated data and the
+ * chatGPT response.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
+ */
 class DataLayer {
+
+    /**
+     * Calculates the item price based on quantity and name
+     * @param string $name of item
+     * @param string $quantity of item
+     * @return float|int price
+     */
     static function getItemPrice($name, $quantity){
         $foodPrices = array(
             'Soda' => 3.50,
@@ -24,6 +38,12 @@ class DataLayer {
         return $foodPrices[$name] * $quantity;
     }
 
+    /**
+     * Retrieves the number of transactions from the database.
+     * Returns the count.
+     *
+     * @return int count of transactions
+     */
     static function getNumberOfTransaction(): int
     {
         $database = new AccessDatabase();
@@ -31,6 +51,11 @@ class DataLayer {
         return count($transactionArray);
     }
 
+    /**
+     * Retrieves the transactions from the database
+     * and calculates the average price.
+     * @return int|string avg transaction price
+     */
     static function getAvgTransactionPrice(){
         $total = 0;
         $database = new AccessDatabase();
@@ -49,6 +74,13 @@ class DataLayer {
         }
     }
 
+    /**
+     * Sets up the prompt and fills in the data to send to chatGPT
+     * @param string $startDate start date
+     * @param string $endDate end date
+     * @param string $type trend or summary
+     * @return string chatGPT prompt
+     */
     static function getGPTPrompt($startDate, $endDate, $type){
         $prompt = "can you give me a " . $type ." analysis of the this lot of data and potentially anything unique you find about the data: ";
         $count = 1;
