@@ -1,8 +1,9 @@
 <?php
-/* Will Castillo, Huy Nguyen, Tien Nguyen
- * February 2024
- * https://github.com/hnben/AIDataAnalytics
- * This is my CONTROLLER for the AI Data Analytics Website
+/**
+ * The index.php is the controller for the AI Data Analytics Website.
+ * This creates the routing for all view pages
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
  */
 
 // Turn on error reporting
