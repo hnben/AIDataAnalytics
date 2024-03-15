@@ -1,5 +1,5 @@
 # AIDataAnalytics
-A data analysis tool for restaurants. Given a large amount of data (expenses, revenue, and sales data) we feed this information into curated prompts into openAI’s API to receive data trends with a click of a button. The website gives an easy to understand overview of all the data, provides options to add expenses and revenue, and uses openAI to receive personalized predictions and data trends
+A data analysis tool for restaurants enhanced with AI to get insights on growth strategies. Given a large amount of data (expenses, revenue, and sales data) we feed this information into curated prompts into openAI’s API to receive data trends with a click of a button. The website gives an easy to understand overview of all the data, provides options to add expenses and revenue, and uses openAI to receive personalized analysis on summary, unique trends, and prediction. 
 
 # Authors
 - **Tien Nguyen** - Front-End Developer
