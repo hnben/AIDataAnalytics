@@ -47,9 +47,16 @@ expenses, net gain, orders, and average order price.
                 <div class="row py-4">
 <!--                    this is the date chooser -->
                     <div class="btn-group pe-4" role="group" aria-label="Basic example">
+                        <!-- Display an error if there is one -->
+                        <check if="{{ isset(@errors['startDate']) }}">
+                            <span class="text-danger">{{ @errors['startDate'] }}</span>
+                        </check>
                         <div class="input-group">
                             <input type="text" class="form-control p-3" name="startDate" placeholder="Start Date: yyyy/mm/dd">
                         </div>
+                        <check if="{{ isset(@errors['endDate']) }}">
+                            <span class="text-danger">{{ @errors['endDate'] }}</span>
+                        </check>
                         <div class="input-group ps-4">
                             <input type="text" class="form-control p-3" name="endDate"  placeholder="End Date: yyyy/mm/dd">
                         </div>
@@ -60,6 +67,9 @@ expenses, net gain, orders, and average order price.
 <!--                start of row 2-->
                 <div class="row pt-5">
                     <!-- start of the card  -->
+                    <check if="{{ isset(@errors['trend']) }}">
+                        <span class="text-danger">{{ @errors['trend'] }}</span>
+                    </check>
                     <div class = "col-md-6">
                         <input type="radio" class="btn-check" name="trend" value="Trend" id="trend" autocomplete="off" >
                         <label class="btn w-100 text-center d-flex align-items-center justify-content-center btn-secondary fs-1" for="trend" style="height: 250px">Trend</label>
@@ -81,6 +91,10 @@ expenses, net gain, orders, and average order price.
             </form>
 <!--            end of the form -->
             <!-- Button trigger modal -->
+            <!-- start of the card  -->
+            <check if="{{ isset(@ready['response']) }}">
+                <span class="text-danger">{{ @ready['response'] }}</span>
+            </check>
             <div class="row">
                 <div class="container mt-5">
                     <button type="button" class="btn btn-primary w-100 py-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -101,7 +115,7 @@ expenses, net gain, orders, and average order price.
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" id="response">
-                            {{ @bruh }}
+                            {{ @SESSION.gpt }}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

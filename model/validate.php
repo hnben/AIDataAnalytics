@@ -32,7 +32,7 @@
          */
         static function validateNumber($number) {
             // Check if the input is numeric
-            if (is_numeric($number)) {
+            if (is_numeric($number) AND $number > 0) {
                 // If it's an integer or a float
                 return true;
             } else {

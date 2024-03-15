@@ -226,15 +226,43 @@ class Controller{
      */
     function analysisOptions()
     {
+        //validation
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $startDate = $_POST['startDate'];
-            $endDate = $_POST['endDate'];
-            $analysisOption = $_POST['trend'];
+            //variable declaration
+            $startDate = "";
+            $endDate = "";
+            $analysisOption = "";
 
-            $prompt = DataLayer::getGPTPrompt($startDate, $endDate, $analysisOption);
-            $response = gptData::getGPTResponse($prompt);
 
-            $this->_f3->set('bruh', $response);
+            if (Validate::validateDate($_POST['startDate'])){
+                $startDate = $_POST['startDate'];
+            }
+            else{
+                $this->_f3->set('errors["startDate"]', "Invalid date");
+            }
+            if (Validate::validateDate($_POST['endDate'])){
+                $endDate = $_POST['endDate'];
+            }
+            else{
+                $this->_f3->set('errors["endDate"]', "Invalid date");
+            }
+            if (isset($_POST['trend'])){
+                $analysisOption = $_POST['trend'];
+            }
+            else{
+                $this->_f3->set('errors["trend"]', "Option not selected");
+            }
+
+            if(empty($this->_f3->get('errors'))) {
+                $prompt = DataLayer::getGPTPrompt($startDate, $endDate, $analysisOption);
+                $response = gptData::getGPTResponse($prompt);
+
+                $this->_f3->set('SESSION.gpt', $response);
+                $this->_f3->set('ready["response"]', "Response is ready");
+            }
+            else{
+                $this->_f3->set('SESSION.gpt', "error in options, please resubmit");
+            }
         }
 
         $view = new Template();

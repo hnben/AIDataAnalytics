@@ -230,7 +230,7 @@ class AccessDatabase
         $statement->bindValue(':transactionID', $order->getTransactionID());
         $statement->bindValue(':category', $order->getCategory());
         $statement->bindValue(':itemName', $order->getItems());
-        $statement->bindValue(':quantity', $order->getQuantity());
+        $statement->bindValue(':quantity', $order->getAmount());
 
         // 4. Execute the query
         $statement->execute();
