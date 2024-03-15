@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * The Transaction class represents a specific type of revenue generated
+ * through an order transaction. This extends the Revenue class.
+ *
+ * @author Huy Nguyen, Tien Nguyen, Will Castillo
+ */
 class Transaction extends Revenue
 {
-    private $_orderSize; // String
+    private $_orderSize;
 
+    /**
+     * Constructor instantiates a Transaction object
+     * @param string $date date
+     * @param float $totalAmount total amount
+     * @param int $orderSize total orders
+     */
     public function __construct($date, $totalAmount, $orderSize)
     {
         parent::__construct($date, $totalAmount);
@@ -13,6 +25,12 @@ class Transaction extends Revenue
     //*****************
     //     SETTERS
     //*****************
+
+    /**
+     * Sets the order size
+     * @param int $orderSize order size
+     * @return void
+     */
     public function setOrderSize($orderSize)
     {
         $this->_orderSize = $orderSize;
@@ -20,6 +38,11 @@ class Transaction extends Revenue
     //*****************
     //     GETTERS
     //*****************
+
+    /**
+     * Gets the order size
+     * @return int order size
+     */
     public function getOrderSize()
     {
         return $this->_orderSize;
